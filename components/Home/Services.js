@@ -83,7 +83,7 @@ const Services = ({ data }) => {
       <div className="md:hidden block px-[24px] mt-9">
         {data.map((obj, index) => (
           <Accordion
-            className="!shadow-none !border-t-2 !border-white !border-solid !m-0 before:!h-0 bg-blue text-white"
+            className="!shadow-none !border-t-2 !border-white !border-solid !m-0 before:!h-0 !bg-blue text-white"
             key={index}
           >
             <AccordionSummary
