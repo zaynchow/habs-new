@@ -31,7 +31,7 @@ const ValueAddedService = () => {
   return (
     <div>
       <div className="py-[150px]">
-        <Display1 className={"text-left lg:text-center text-yellow"}>
+        <Display1 className={"lg:text-center text-yellow text-center"}>
           Value Added Services
         </Display1>
         <Subtitle className="text-xl font-light mt-6 mb-9 tracking-[1.2px]">
