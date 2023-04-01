@@ -21,6 +21,23 @@ module.exports = {
       lora: ["var(--font-lora)", "sans-serif"],
       sans: ["var(--font-jakarta)", ...fontFamily.sans],
     },
+    extend: {
+      animation: {
+        fadeIn: "fadeIn 1.5s ease-in",
+        fadeOut: "fadeOut 1s ease-in",
+      },
+
+      keyframes: () => ({
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        fadeOut: {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+      }),
+    },
   },
   plugins: [],
 };

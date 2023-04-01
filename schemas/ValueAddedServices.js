@@ -12,7 +12,7 @@ export default {
     {
       name: "service_long_desc",
       type: "array",
-      of: [{ type: "block" }],
+      of: [{ type: "block" }, { type: "break" }],
       title: "Service Desc",
       validation: (rule) => rule.required(),
     },

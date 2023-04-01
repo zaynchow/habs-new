@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import P from "../Typography/P";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 const Button = ({
   link,
@@ -30,14 +31,7 @@ const Button = ({
       >
         {children}
       </P>
-      {arrow && (
-        <img
-          className="inline-block ml-2 "
-          src="/icons/arrow-right.svg"
-          width={20}
-          height={20}
-        />
-      )}
+      {arrow && <ArrowRightAltIcon className="ml-2" />}
     </Link>
   );
 };

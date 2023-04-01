@@ -3,6 +3,7 @@ import { P, A } from "./Typography";
 import SectionContainer from "./Utils/SectionContainer";
 import Image from "next/image";
 import SocialIcons from "./Utils/SocialIcons";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -10,13 +11,15 @@ const Footer = () => {
       <SectionContainer className="!mb-0">
         <div>
           <div className="flex md:flex-row flex-col gap-8 pb-20 justify-between">
-            <div className="max-w-[240px]">
-              <Image
-                src="/logos/logo.svg"
-                width="120"
-                height="120"
-                alt="HABSL Logo"
-              />
+            <div className="md:max-w-[240px]">
+              <Link href="/">
+                <Image
+                  src="/logos/logo.svg"
+                  width="120"
+                  height="120"
+                  alt="HABSL Logo"
+                />
+              </Link>
               <P className="text-[14px] text-white  mt-4">
                 Haji Ahmad Brothers Securities Limited is one of the found
                 companies in Bangladesh.
