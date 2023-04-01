@@ -5,9 +5,11 @@ import Link from "next/link";
 import Button from "./Button/Button";
 import { P, A } from "./Typography";
 import { useState, useEffect } from "react";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
+  const [showServicesMenu, setShowServicesMenu] = useState(false);
 
   useEffect(() => {
     showNav && (document.body.style.overflow = "hidden");
@@ -84,7 +86,7 @@ const Header = () => {
       </div>
 
       <div
-        className={`h-screen w-screen md:hidden absolute top-0 right-0 z-[4] bg-blue  ${
+        className={`h-screen w-screen md:hidden absolute top-0 right-0 z-[4] bg-blue px-6 ${
           showNav ? "scale-y-100" : "scale-y-0"
         } origin-top transition-transform duration-[600ms] ease-in`}
       >
@@ -93,7 +95,7 @@ const Header = () => {
             showNav ? "animate-fadeIn" : "animate-fadeOut"
           } `}
         >
-          <li className="pl-8 ">
+          <li className=" ">
             <A
               href="/"
               className={`text-[28px] `}
@@ -102,16 +104,62 @@ const Header = () => {
               Home
             </A>
           </li>
-          <li className="pl-8 relative">
-            <A href="/services " className={"text-[28px]"}>
-              Services
-              <img
-                className="inline pl-1 absolute top-1/2 -translate-y-[50%]"
-                src="/icons/caret-down.svg"
-              />
+          <li className=" relative flex items-center">
+            <A
+              href=""
+              className={
+                "text-[28px] flex flex-col justify-center items-center gap-5 hover:no-underline"
+              }
+              onClick={() => {
+                setShowServicesMenu((prev) => !prev);
+              }}
+            >
+              <div className="whitespace-nowrap">
+                Services
+                <ExpandMoreIcon className="-rotate-90" />
+              </div>
             </A>
+            <ul
+              className={`${
+                showServicesMenu ? "flex flex-col gap-5 py-9 ml-4" : "hidden"
+              }`}
+            >
+              <li>
+                <A href="/" className={"text-[28px] !leading-8 "}>
+                  Full DP Services
+                </A>
+              </li>
+
+              <li>
+                <A href="/" className={"text-[28px] !leading-8 "}>
+                  SMS Service
+                </A>
+              </li>
+
+              <li>
+                <A href="/" className={"text-[28px] !leading-8 "}>
+                  Online Payment System
+                </A>
+              </li>
+
+              <li>
+                <A href="/" className={"text-[28px] !leading-8 "}>
+                  Full DP Services
+                </A>
+              </li>
+              <li>
+                <A href="/" className={"text-[28px] !leading-8  "}>
+                  Research Services
+                </A>
+              </li>
+              <li>
+                <A href="/" className={"text-[28px] !leading-8 "}>
+                  Value Added Services
+                </A>
+              </li>
+            </ul>
           </li>
-          <li className="pl-8">
+          <li className="">
             <A
               href="/about"
               className={"text-[28px] text-center"}
@@ -120,7 +168,7 @@ const Header = () => {
               About Us
             </A>
           </li>
-          <li className="pl-8 ">
+          <li className=" ">
             <A
               href="/partners"
               className={"text-[28px]"}
@@ -129,7 +177,7 @@ const Header = () => {
               Our Partners
             </A>
           </li>
-          <li className="pl-8">
+          <li className="">
             <A
               href="/news"
               className={"text-[28px]"}
@@ -138,7 +186,7 @@ const Header = () => {
               News
             </A>
           </li>
-          <li className="pl-8">
+          <li className="">
             <A
               href="/contact"
               className={"text-[28px]"}
@@ -147,7 +195,7 @@ const Header = () => {
               Contact
             </A>
           </li>
-          <li className="pl-8 ">
+          <li className=" ">
             <A href="https://munshicorp.com/careers/" className={"text-[28px]"}>
               Careers
             </A>

@@ -13,7 +13,7 @@ const Button = ({
 }) => {
   return (
     <Link
-      className={`md:pl-9 md:py-2.5 pl-6 py-2 ${
+      className={`md:pl-9 md:py-2.5 pl-6 py-2  ${
         arrow ? "md:pr-7 pr-3.5" : "md:pr-9 pr-6"
       } ${
         bgColor == "transparent" && "px-0"
@@ -22,16 +22,18 @@ const Button = ({
       } ${className}`}
       href={link}
     >
-      <P
-        className={`inline-block md:text-[16px] text-[14px] ${
-          bgColor == "bg-blue" || bgColor == "bg-black"
-            ? "text-white"
-            : "text-black"
-        }`}
-      >
-        {children}
-      </P>
-      {arrow && <ArrowRightAltIcon className="ml-2" />}
+      <div className="flex items-center">
+        <P
+          className={`inline-block md:text-[16px] text-[14px] ${
+            bgColor == "bg-blue" || bgColor == "bg-black"
+              ? "text-white"
+              : "text-black"
+          }`}
+        >
+          {children}
+        </P>
+        {arrow && <ArrowRightAltIcon className="ml-2" />}
+      </div>
     </Link>
   );
 };
