@@ -92,7 +92,7 @@ const Services = ({ data }) => {
               expandIcon={<ExpandMoreIcon className="text-white" />}
               className="!p-0"
             >
-              <P className="!m-0">{obj.service_name}</P>
+              <P className="!m-0 !text-white">{obj.service_name}</P>
             </AccordionSummary>
             <AccordionDetails className="px-0">
               <Image
