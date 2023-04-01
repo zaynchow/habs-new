@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="bg-blue pt-16 pb-4">
       <SectionContainer className="!mb-0">
         <div>
-          <div className="flex pb-20 justify-between">
+          <div className="flex md:flex-row flex-col gap-8 pb-20 justify-between">
             <div className="max-w-[240px]">
               <Image
                 src="/logos/logo.svg"
@@ -79,14 +79,14 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col">
-            <P className="text-[14px] text-white">
+            <P className="md:text-[14px] text-[12px] text-white">
               HABSL Membership details: TREC # 041, Dhaka Stock Exchange Ltd.
               Sec Reg No. 3.1/DSE-41/2006/127
             </P>
-            <P className="text-[14px] text-white">
+            <P className="md:text-[14px] text-[12px] text-white">
               © Copyright HABS LTD 2023. All Rights Reserved.
             </P>
-            <P className="text-[14px] text-white">
+            <P className="md:text-[14px] text-[12px] text-white">
               Designed & Developed by{" "}
               <a className="underline" href="https://zaynchowdhury.com">
                 Zayn Chowdhury

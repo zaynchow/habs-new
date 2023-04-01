@@ -8,7 +8,7 @@ import Image from "next/image";
 const LogoGrid = ({ data }) => {
   return (
     <SectionContainer className="pb-[50px]">
-      <div className="grid grid-rows-3 grid-cols-2 md:grid-rows-2 md:grid-cols-3 gap-x-4 gap-y-16">
+      <div className="grid grid-rows-3 grid-cols-2 md:grid-rows-2 md:grid-cols-3 md:gap-x-4 gap-16 md:gap-y-16">
         {data.slice(0, 6).map((obj, i) => (
           <Image
             className="saturate-0 hover:saturate-100 h-fit max-h-[100px]"
@@ -20,18 +20,6 @@ const LogoGrid = ({ data }) => {
           />
         ))}
       </div>
-      {/* <div className="flex justify-between mt-12 gap-x-4 items-center relative">
-        {data.slice(0, 3).map((obj, i) => (
-          <Image
-            className="saturate-0 hover:saturate-100 h-fit max-h-[100px]"
-            src={urlFor(obj.image).url()}
-            alt="partner logo"
-            width={250}
-            height={300}
-            key={i}
-          />
-        ))}
-      </div> */}
     </SectionContainer>
   );
 };

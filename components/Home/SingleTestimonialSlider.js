@@ -23,7 +23,7 @@ const SingleTestimonialSlider = ({ name, children, designation, img }) => {
           </P>
         </div>
         <div className="mt-4 inline-block before:mr-1 before:block before:content-[''] before:bg-[url('/icons/quotation-mark-upwards.svg')] before:w-[30px] before:h-[20px] before:bg-no-repeat before:float-left after:block after:content-[''] after:bg-[url('/icons/quotation-mark-downwards.svg')] after:w-[30px] after:h-[20px] after:bg-no-repeat after:float-right ">
-          {children}
+          <P>{children}</P>
         </div>
       </div>
     </div>
