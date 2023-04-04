@@ -7,7 +7,7 @@ import { client } from "@/lib/sanity.client";
 import LogoGrid from "@/components/LogoGrid";
 import CompanyGoals from "@/components/About/CompanyGoals";
 import { useState, useEffect } from "react";
-import Management from "@/components/Management";
+import Management from "@/components/Management-copy";
 import ContactUsBanner from "@/components/ContactUsBanner";
 
 const missionQuery = groq`*[_type=="locations"] | order(_createdAt asc)`;
@@ -37,7 +37,7 @@ const About = () => {
   }
   return (
     <div>
-      <div className="pt-[150px] max-w-[900px] mx-auto">
+      <div className="pt-[150px] max-w-[900px] mx-auto px-6">
         <Display1 className={"text-yellow"}>
           Our goal is to make investment simple for you
         </Display1>

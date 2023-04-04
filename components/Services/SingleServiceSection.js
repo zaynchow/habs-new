@@ -20,7 +20,7 @@ const SingleServiceSection = ({
   return (
     <SectionContainer
       className={`flex md:flex-row flex-col items-center justify-between ${
-        reverse && "flex-row-reverse"
+        reverse && "md:flex-row-reverse"
       }`}
     >
       <H3 className="font-medium !text-2xl inline-block md:hidden mb-6">

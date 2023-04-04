@@ -39,7 +39,7 @@ const Locations = ({ data }) => {
           Chittagong
         </P>
       </div>
-      <div className="flex gap-3 justify-center ">
+      <div className="flex md:flex-row flex-col  gap-3 justify-center ">
         {option[0].offices.map((singleOffice, index) => (
           <InfoBox title={singleOffice.title}>
             <P className="!block">

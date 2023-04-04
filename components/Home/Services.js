@@ -16,7 +16,7 @@ const Services = ({ data }) => {
 
   return (
     <SectionContainer className="bg-blue pt-9 md:px-[80px] pb-16">
-      <H2 className="text-white">Services to maximize your investments</H2>
+      <H2 className="text-white px-6">Services to maximize your investments</H2>
       <div className="hidden md:block">
         <div className="flex w-full justify-between text-center mt-9">
           {data.map((obj, index) => (

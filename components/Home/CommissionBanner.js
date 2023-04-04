@@ -28,11 +28,13 @@ const CommissionBanner = () => {
               src="/CommissionImg.png"
               alt=""
             />
-            Our structured reward policy is to motivate and encourage clients to
-            invest in the capital market. Any client is eligible to get a
-            commission discount on their trade volume after meeting some
-            eligibility criteria which enables them to maximize their return on
-            investment.
+            <span className="mt-5 inline-block">
+              Our structured reward policy is to motivate and encourage clients
+              to invest in the capital market. Any client is eligible to get a
+              commission discount on their trade volume after meeting some
+              eligibility criteria which enables them to maximize their return
+              on investment.
+            </span>
           </P>
           <Button bgColor="bg-yellow" link="/" className="mt-6" arrow>
             Contact Us To Enroll

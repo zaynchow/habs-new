@@ -10,6 +10,7 @@ import { client } from "@/lib/sanity.client";
 import { useState, useEffect } from "react";
 import ServicesGrid from "@/components/Services/ServicesGrid";
 
+
 const feesQuery = groq`*[_type=="fees"] | order(_createdAt asc)`;
 const servicesQuery = groq`*[_type=="services"] | order(_createdAt asc)`;
 
@@ -35,8 +36,8 @@ const ServicesPage = () => {
 
   return (
     <div>
-      <div className="py-[150px]">
-        <Display1 className={"text-yellow"}>Services</Display1>
+      <div className="py-[150px] px-6">
+        <Display1 className={"text-yellow text-center"}>Services</Display1>
         <Subtitle className="text-xl font-light mt-6 mb-9 tracking-[1.2px]">
           Empowering investors to achieve greater returns through professional
           brokerage services

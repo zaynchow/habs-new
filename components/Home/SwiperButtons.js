@@ -1,44 +1,44 @@
 import { useSwiper } from "swiper/react";
 import Image from "next/image";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
-const SwiperButtonNext = ({ progress, className }) => {
-  const swiper = useSwiper();
+const SwiperButtonNext = ({
+  progress,
+  className,
+  dark,
+  onClickNext,
+  onClickPrev,
+}) => {
   return (
     <div className={`flex flex-col items-center gap-6 ${className}`}>
       <div className="flex gap-3">
         <button
-          className=" border-solid border-black border-2 rounded-[200px] w-12 h-12 rotate-180 flex justify-center cursor-pointer items-center prev"
-          onClick={() => swiper.slidePrev()}
+          className={` border-solid ${
+            dark ? "!border-white" : "!border-black"
+          } border-2 rounded-[200px] w-12 h-12 rotate-180 flex justify-center cursor-pointer items-center prev`}
+          onClick={onClickPrev}
         >
-          <Image
-            className="cursor-pointer"
-            src="/icons/arrow-right.svg"
-            width={20}
-            height={20}
-            alt="Prev Arrow"
+          <ArrowRightAltIcon
+            className={`cursor-pointer ${dark ? "text-white" : "text-black"} `}
           />
         </button>
         <button
-          className=" border-solid border-black border-2 rounded-[200px] w-12 h-12 flex justify-center cursor-pointer items-center next"
-          onClick={() => swiper.slideNext()}
+          className={` border-solid ${
+            dark ? "!border-white" : "!border-black"
+          } border-2 rounded-[200px] w-12 h-12 flex justify-center cursor-pointer items-center next`}
+          onClick={onClickNext}
         >
-          <Image
-            className="cursor-pointer"
-            src="/icons/arrow-right.svg"
-            width={20}
-            height={20}
-            alt="Next Arrow"
+          <ArrowRightAltIcon
+            className={`cursor-pointer ${dark ? "text-white" : "text-black"} `}
           />
         </button>
       </div>
 
       <div className="bg-black relative h-1 w-[300px]">
         <div
-          className="bg-yellow h-12 transition-all"
+          className="bg-yellow h-1 transition-all"
           style={{ width: `${300 * progress}px` }}
-        >
-          70%
-        </div>
+        ></div>
       </div>
     </div>
   );

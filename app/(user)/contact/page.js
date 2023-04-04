@@ -26,9 +26,9 @@ const Contact = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div>
-      <div className="py-[150px]">
-        <Display1 className={"text-yellow"}>Contact</Display1>
+    <div className="">
+      <div className="py-[150px] mx-6">
+        <Display1 className={"text-yellow text-center"}>Contact</Display1>
         <Subtitle className="text-xl font-light mt-6 mb-9 tracking-[1.2px]">
           Empowering investors to achieve greater returns through professional
           brokerage services

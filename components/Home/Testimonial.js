@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import SectionContainer from "../Utils/SectionContainer";
 import { H2, Subtitle } from "../Typography";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,9 +7,11 @@ import { Autoplay } from "swiper";
 import "swiper/swiper-bundle.min.css";
 import SingleTestimonialSlider from "./SingleTestimonialSlider";
 import SwiperButtons from "./SwiperButtons";
+import { useSwiper } from "swiper/react";
 
 const Testimonial = ({ data }) => {
   const [progressBar, setProgressBar] = useState(0);
+  const swiperRef = useRef(null);
   return (
     <SectionContainer>
       <H2>Trusted by over 50,000 investors</H2>
@@ -21,6 +23,7 @@ const Testimonial = ({ data }) => {
         pagination={{
           clickable: true,
         }}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
         modules={[Autoplay]}
         className="mySwiper  mt-16"
         autoplay={{
@@ -49,7 +52,12 @@ const Testimonial = ({ data }) => {
           </SwiperSlide>
         ))}
 
-        <SwiperButtons className={"-mt-10 md:m-0"} progress={progressBar} />
+        <SwiperButtons
+          className={"-mt-10 md:m-0"}
+          progress={progressBar}
+          onClickNext={() => swiperRef.current?.slideNext()}
+          onClickPrev={() => swiperRef.current?.slidePrev()}
+        />
       </Swiper>
     </SectionContainer>
   );

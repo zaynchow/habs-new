@@ -5,7 +5,7 @@ import InfoBox from "../Utils/InfoBox";
 
 const CompanyGoals = () => {
   return (
-    <SectionContainer className="flex justify-center gap-8">
+    <SectionContainer className="flex md:flex-row flex-col justify-center gap-8">
       <InfoBox title="Mission">
         <P>
           Empowering investors to achieve greater returns through professional

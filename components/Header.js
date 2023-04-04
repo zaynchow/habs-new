@@ -32,12 +32,72 @@ const Header = () => {
             <li className="pl-8 ">
               <A href="/">Home</A>
             </li>
-            <li className="pl-8">
-              <A href="/services">
+
+            <li
+              className="pl-8 py-2"
+              onMouseOver={() => setShowServicesMenu(true)}
+              onMouseLeave={() => setShowServicesMenu(false)}
+            >
+              <A href="/services" className={" inline-block"}>
                 Services
-                <img className="inline pl-1" src="/icons/caret-down.svg" />
+                <ExpandMoreIcon />
               </A>
+              {showServicesMenu && (
+                <div className="absolute bg-white shadow-[0px_0px_40px_3px_rgba(0,0,0,0.1)] p-6 mt-2 rounded-xl ">
+                  <ul className="columns-2">
+                    <li>
+                      <A
+                        href="/services/#full-dp-services"
+                        className={"text-[28px] !leading-8 "}
+                        onClick={() => setShowServicesMenu(false)}
+                      >
+                        Full DP Services
+                      </A>
+                    </li>
+
+                    <li>
+                      <A
+                        href="/services/#sms-service"
+                        className={"text-[28px] !leading-8 "}
+                        onClick={() => setShowServicesMenu(false)}
+                      >
+                        SMS Service
+                      </A>
+                    </li>
+
+                    <li>
+                      <A
+                        href="/services/#online-payment-system"
+                        className={"text-[28px] !leading-8 "}
+                        onClick={() => setShowServicesMenu(false)}
+                      >
+                        Online Payment System
+                      </A>
+                    </li>
+
+                    <li>
+                      <A
+                        href="/services/#research-services"
+                        className={"text-[28px] !leading-8  "}
+                        onClick={() => setShowServicesMenu(false)}
+                      >
+                        Research Services
+                      </A>
+                    </li>
+                    <li>
+                      <A
+                        href="/services/value-added-services"
+                        className={"text-[28px] !leading-8 "}
+                        onClick={() => setShowServicesMenu(false)}
+                      >
+                        Value Added Services
+                      </A>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </li>
+
             <li className="pl-8">
               <A href="/about">About Us</A>
             </li>
@@ -121,39 +181,54 @@ const Header = () => {
             </A>
             <ul
               className={`${
-                showServicesMenu ? "flex flex-col gap-5 py-9 ml-4" : "hidden"
+                showServicesMenu ? "flex flex-col gap-5 py-5 ml-4 " : "hidden"
               }`}
             >
               <li>
-                <A href="/" className={"text-[28px] !leading-8 "}>
+                <A
+                  href="/services/#full-dp-services"
+                  className={"text-[28px] !leading-8 "}
+                  onClick={() => setShowNav(false)}
+                >
                   Full DP Services
                 </A>
               </li>
 
               <li>
-                <A href="/" className={"text-[28px] !leading-8 "}>
+                <A
+                  href="/services/#sms-service"
+                  className={"text-[28px] !leading-8 "}
+                  onClick={() => setShowNav(false)}
+                >
                   SMS Service
                 </A>
               </li>
 
               <li>
-                <A href="/" className={"text-[28px] !leading-8 "}>
+                <A
+                  href="/services/#online-payment-system"
+                  className={"text-[28px] !leading-8 "}
+                  onClick={() => setShowNav(false)}
+                >
                   Online Payment System
                 </A>
               </li>
 
               <li>
-                <A href="/" className={"text-[28px] !leading-8 "}>
-                  Full DP Services
-                </A>
-              </li>
-              <li>
-                <A href="/" className={"text-[28px] !leading-8  "}>
+                <A
+                  href="/services/#research-services"
+                  className={"text-[28px] !leading-8  "}
+                  onClick={() => setShowNav(false)}
+                >
                   Research Services
                 </A>
               </li>
               <li>
-                <A href="/" className={"text-[28px] !leading-8 "}>
+                <A
+                  href="/services/value-added-services"
+                  className={"text-[28px] !leading-8 "}
+                  onClick={() => setShowNav(false)}
+                >
                   Value Added Services
                 </A>
               </li>

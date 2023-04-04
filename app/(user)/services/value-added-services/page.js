@@ -30,7 +30,7 @@ const ValueAddedService = () => {
 
   return (
     <div>
-      <div className="py-[150px]">
+      <div className="py-[150px] px-6">
         <Display1 className={"lg:text-center text-yellow text-center"}>
           Value Added Services
         </Display1>

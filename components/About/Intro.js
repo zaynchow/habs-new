@@ -4,7 +4,7 @@ import { P } from "../Typography";
 
 const Intro = () => {
   return (
-    <SectionContainer className="mt-6 !max-w-[580px]">
+    <SectionContainer className="mt-6 md:!max-w-[580px]">
       <P className="text-left">
         Our mission at HABS Brokerage is to provide our clients with the highest
         level of service and expertise in the stock market. We strive to empower
