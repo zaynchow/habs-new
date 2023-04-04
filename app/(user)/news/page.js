@@ -46,9 +46,8 @@ const news = () => {
 
   return (
     <div>
-      <div className="py-[150px]">
-        {console.log(currentPage)}
-        <Display1 className={"text-yellow"}>Stay Updated</Display1>
+      <div className="py-[150px] mx-6">
+        <Display1 className={"text-yellow text-center"}>Stay Updated</Display1>
         <Subtitle className="text-xl font-light mt-6 mb-9 tracking-[1.2px]">
           Empowering investors to achieve greater returns through professional
           brokerage services
@@ -59,7 +58,7 @@ const news = () => {
       </div>
       <HighlightedNews />
 
-      <SectionContainer className="grid grid-cols-2 gap-12 ">
+      <SectionContainer className="grid md:grid-cols-2 gap-12 ">
         {currentPosts.map((obj, index) => (
           <SingleNewsBanner
             title={obj.title}

@@ -29,8 +29,8 @@ const Partners = () => {
   }
   return (
     <div>
-      <div className="py-[150px]">
-        <Display1 className={"text-yellow"}>Our Partners</Display1>
+      <div className="mx-6 py-[150px]">
+        <Display1 className={"text-yellow text-center"}>Our Partners</Display1>
         <Subtitle className="text-xl font-light mt-6 mb-9 tracking-[1.2px]">
           Empowering investors to achieve greater returns through professional
           brokerage services
@@ -55,15 +55,21 @@ const Partners = () => {
               commissionRate={obj.commission_rate}
               interestRate={obj.interest_rate}
               img={obj.image}
-              className={index == 0 ? "pb-24" : "py-24"}
+              className={
+                index == 0
+                  ? "pb-24"
+                  : index == data.partnersData.length - 1
+                  ? "pt-24"
+                  : "py-24"
+              }
             />
             {index != data.partnersData.length - 1 && (
               <hr className="w-full  border-[1px] " />
             )}
           </>
         ))}
-        <ContactUsBanner />
       </SectionContainer>
+      <ContactUsBanner />
     </div>
   );
 };

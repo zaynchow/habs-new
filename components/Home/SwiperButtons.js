@@ -1,5 +1,7 @@
+"use client";
 import { useSwiper } from "swiper/react";
 import Image from "next/image";
+import { useRef } from "react";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 const SwiperButtonNext = ({
@@ -9,6 +11,8 @@ const SwiperButtonNext = ({
   onClickNext,
   onClickPrev,
 }) => {
+  const sliderRef = useRef();
+
   return (
     <div className={`flex flex-col items-center gap-6 ${className}`}>
       <div className="flex gap-3">
@@ -34,10 +38,13 @@ const SwiperButtonNext = ({
         </button>
       </div>
 
-      <div className="bg-black relative h-1 w-[300px]">
+      <div
+        className="bg-black relative h-1 md:w-[300px] w-full"
+        ref={sliderRef}
+      >
         <div
-          className="bg-yellow h-1 transition-all"
-          style={{ width: `${300 * progress}px` }}
+          className={`bg-yellow h-1 transition-all`}
+          style={{ width: `${sliderRef.current?.clientWidth * progress}px` }}
         ></div>
       </div>
     </div>

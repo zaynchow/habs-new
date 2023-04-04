@@ -21,8 +21,8 @@ const SinglePartnerSection = ({
         width={300}
         height={350}
       />
-      <H3 className="mt-12 mb-8 text-center">{name}</H3>
-      <P className="text-center w-[80%]">{desc}</P>
+      <H3 className="md:mt-12 mt-6 mb-8 text-center">{name}</H3>
+      <P className="text-center md:w-[80%]">{desc}</P>
 
       <div
         className={`flex  ${
@@ -30,18 +30,22 @@ const SinglePartnerSection = ({
         } gap-8 justify-center`}
       >
         {commissionRate && (
-          <div className="flex items-center gap-2">
-            <P className="!text-[52px] font-bold text-yellow ">0.35%</P>
-            <P className="leading-5">
+          <div className="flex md:flex-row flex-col md:items-center md:gap-2 gap-4">
+            <P className="md:!text-[52px] text-[45px] font-bold text-yellow text-left md:text-center">
+              0.35%
+            </P>
+            <P className="leading-5  ">
               Commission
               <br /> Rate
             </P>
           </div>
         )}
         {interestRate && (
-          <div className="flex items-center gap-2">
-            <P className="!text-[52px] font-bold text-yellow ">14%</P>
-            <P className="leading-5">
+          <div className="flex md:flex-row flex-col md:items-center md:gap-2 gap-4">
+            <P className="md:!text-[52px] text-[45px] font-bold text-yellow ">
+              14%
+            </P>
+            <P className="leading-5 text-left md:text-center">
               Interest Rate on
               <br /> Margin Loan
             </P>

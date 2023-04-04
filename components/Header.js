@@ -129,17 +129,17 @@ const Header = () => {
         onClick={() => setShowNav((prev) => !prev)}
       >
         <div
-          className={`w-[35px] h-[2px] my-[8px] block transition-transform duration-[800ms] bg-blue ${
+          className={`w-[35px] h-[2px] my-[8px] block transition-all duration-[800ms] bg-blue ${
             showNav && "-rotate-45 bg-white translate-y-[10px]"
           } `}
         ></div>
         <div
-          className={`w-[20px] h-[2px] my-[8px] block transition-opacity duration-[700ms] bg-blue ${
+          className={`w-[20px] h-[2px] my-[8px] block transition-all duration-[700ms] bg-blue ${
             showNav && "opacity-0"
           }`}
         ></div>
         <div
-          className={`w-[35px] h-[2px] my-[8px] block transition-transform duration-[800ms] bg-blue  ${
+          className={`w-[35px] h-[2px] my-[8px] block transition-all duration-[800ms] bg-blue  ${
             showNav && "rotate-45 bg-white -translate-y-[8px]"
           }`}
         ></div>

@@ -25,7 +25,7 @@ const SocialIcons = ({ className }) => {
   }
 
   return (
-    <>
+    <div className="flex gap-2">
       <Link href={data.socialData[0].facebook} target="_blank">
         <svg
           id="Layer_1"
@@ -87,7 +87,7 @@ const SocialIcons = ({ className }) => {
           />
         </svg>
       </Link>
-    </>
+    </div>
   );
 };
 

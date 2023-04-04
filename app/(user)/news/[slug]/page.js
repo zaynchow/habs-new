@@ -31,67 +31,46 @@ const singlePost = ({ params }) => {
   }
 
   return (
-    <div className="pt-[150px] max-w-[900px] mx-auto">
-      <Display1 className={"text-yellow"}>{data.postData[0].title}</Display1>
-      <Subtitle className="text-xl font-light mt-6 mb-9 tracking-[1.2px] !max-w-[780px]">
-        {data.postData[0].summary}
-      </Subtitle>
-      <div className="text-center">
-        <Button
-          link="/contact"
-          bgColor="bg-black"
-          outline={true}
-          className=" text-white"
-        >
-          Join Us
-        </Button>
-      </div>
-      <SectionContainer className="mt-16 mb-16">
-        <Image
-          src={urlFor(data.postData[0].image).url()}
-          width={900}
-          height={350}
-          className="h-[400px]"
-        />
-      </SectionContainer>
-      <SectionContainer className="!max-w-[780px] mx-auto !mb-[70px]">
-        <PortableText
-          content={data.postData[0].desc}
-          serializers={{ break: (props) => <br /> }}
-        />
-      </SectionContainer>
-      <hr className="border-solid border-black border-2 mb-4" />
-      <div className="flex justify-between mb-[100px]">
-        <div className="flex gap-2">
+    <div>
+      <div className="pt-[150px] max-w-[900px] md:mx-auto mx-6">
+        <Display1 className={"text-yellow text-center"}>
+          {data.postData[0].title}
+        </Display1>
+        <Subtitle className="text-xl font-light mt-6 mb-9 tracking-[1.2px] !max-w-[780px] ">
+          {data.postData[0].summary}
+        </Subtitle>
+        <div className="text-center">
           <Button
             link="/contact"
-            bgColor="bg-yellow"
-            outline={true}
-            className=" text-white "
-          >
-            Investment
-          </Button>
-          <Button
-            link="/contact"
-            bgColor="bg-yellow"
+            bgColor="bg-black"
             outline={true}
             className=" text-white"
           >
-            Stocks
+            Join Us
           </Button>
         </div>
-        <div className="flex gap-2 items-center">
-          <Button
-            link="/contact"
-            bgColor="bg-blue"
-            outline={true}
-            className=" text-white"
-            arrow
-          >
+        <SectionContainer className="mt-16 md:mb-16 !mb-10 w-full mx-auto">
+          <Image
+            src={urlFor(data.postData[0].image).url()}
+            width={900}
+            height={350}
+            className="md:h-[400px] md:w-[900px] w-full "
+          />
+        </SectionContainer>
+        <SectionContainer className="!max-w-[780px] mx-auto !mb-[70px]">
+          <PortableText
+            content={data.postData[0].desc}
+            serializers={{ break: (props) => <br /> }}
+          />
+        </SectionContainer>
+        <hr className="border-solid border-black border-2 mb-4" />
+        <div className="flex justify-between mb-[100px]">
+          <Button link="/contact" bgColor="bg-yellow" outline={true} arrow>
             Copy Link
           </Button>
-
-          <Icons />
+          <div>
+            <Icons />
+          </div>
         </div>
       </div>
       <ContactUsBanner />
