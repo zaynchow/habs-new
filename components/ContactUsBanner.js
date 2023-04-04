@@ -6,9 +6,11 @@ import Button from "./Button/Button";
 const ContactUsBanner = () => {
   return (
     <SectionContainer className="bg-yellow py-9 md:px-0 px-6 text-center">
-      <H4>
+      <H4 className="!font-semibold leading-[28px] md:leading-normal">
         Any queries regarding your investment? <br />
-        Let's get you an expert!
+        <span className="mt-4 inline-block md:mt-0">
+          Let's get you an expert!
+        </span>
       </H4>
       <Button
         bgColor={"bg-blue"}
