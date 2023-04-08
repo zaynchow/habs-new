@@ -24,12 +24,10 @@ const ServicesPage = () => {
       servicesData,
     };
     setData(newData);
-    let hash = window.location.hash;
 
-    if (hash) {
+    if (window.location.hash) {
       let element = document.querySelectorAll(`${hash}`)[0];
       element?.scrollIntoView({ behavior: "smooth", block: "start" });
-      console.log(element);
     }
   }
 

@@ -11,9 +11,13 @@ const SinglePartnerSection = ({
   interestRate,
   commissionRate,
   className,
+  id,
 }) => {
   return (
-    <div className={`flex justify-center flex-col items-center ${className}`}>
+    <div
+      className={`flex justify-center flex-col items-center ${className}`}
+      id={id}
+    >
       <Image
         className="saturate-0 hover:saturate-100 h-fit max-h-[100px]"
         src={urlFor(img).url()}

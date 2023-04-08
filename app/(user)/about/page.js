@@ -9,7 +9,7 @@ import CompanyGoals from "@/components/About/CompanyGoals";
 import { useState, useEffect } from "react";
 import ManagementProfiles from "@/components/About/ManagementProfiles";
 import ContactUsBanner from "@/components/ContactUsBanner";
-import Timeline from "@/components/about//Timeline";
+import Timeline from "@/components/about/Timeline";
 import Abbreviation from "@/components/About/Abbreviation";
 
 const missionQuery = groq`*[_type=="locations"] | order(_createdAt asc)`;

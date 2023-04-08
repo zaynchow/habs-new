@@ -17,7 +17,12 @@ const Partners = () => {
     const newData = {
       partnersData,
     };
+    let hash = window.location.hash;
     setData(newData);
+    if (hash) {
+      let element = document.querySelectorAll(`${hash}`)[0];
+      element?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   }
 
   useEffect(() => {
@@ -55,6 +60,7 @@ const Partners = () => {
               commissionRate={obj.commission_rate}
               interestRate={obj.interest_rate}
               img={obj.image}
+              id={obj.slug.current}
               className={
                 index == 0
                   ? "pb-24"
