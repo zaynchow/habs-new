@@ -60,11 +60,14 @@ const Header = () => {
               onMouseLeave={() =>
                 setShowServicesMenu((prev) => setShowServicesMenu(false))
               }
+              onClick={() =>
+                setShowServicesMenu((prev) => setShowServicesMenu(true))
+              }
             >
-              <A href="/services" className={"block"}>
+              <P className={"block"}>
                 Services
                 <ExpandMoreIcon />
-              </A>
+              </P>
               {showServicesMenu && (
                 <div className="absolute bg-white shadow-[0px_0px_40px_3px_rgba(0,0,0,0.1)] p-6 mt-2 rounded-xl z-10">
                   <ul className="columns-2">
