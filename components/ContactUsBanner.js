@@ -1,7 +1,7 @@
 import React from "react";
 import SectionContainer from "./Utils/SectionContainer";
 import H4 from "./Typography/H4";
-import Button from "./Button/Button";
+import Button from "./Utils/Button";
 
 const ContactUsBanner = () => {
   return (

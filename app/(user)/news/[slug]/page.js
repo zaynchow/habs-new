@@ -4,7 +4,7 @@ import { client } from "@/lib/sanity.client";
 import urlFor from "@/lib/urlFor";
 import { groq } from "next-sanity";
 import { Display1, Subtitle } from "@/components/Typography";
-import Button from "@/components/Button/Button";
+import Button from "@/components/Utils/Button";
 import SectionContainer from "@/components/Utils/SectionContainer";
 import Image from "next/image";
 import PortableText from "react-portable-text";

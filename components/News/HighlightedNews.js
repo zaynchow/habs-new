@@ -1,7 +1,7 @@
 import React from "react";
 import { Subtitle, H2, P } from "../Typography";
 import SectionContainer from "../Utils/SectionContainer";
-import Button from "../Button/Button";
+import Button from "../Utils/Button";
 import Image from "next/image";
 
 const HighlightedNews = () => {

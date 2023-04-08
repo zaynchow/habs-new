@@ -1,7 +1,7 @@
 import React from "react";
 import SectionContainer from "../Utils/SectionContainer";
 import { H3 } from "../Typography";
-import Button from "../Button/Button";
+import Button from "../Utils/Button";
 import { TextField } from "@mui/material";
 
 const ContactForm = () => {

@@ -2,23 +2,42 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./Button/Button";
-import { P, A } from "./Typography";
+import Button from "./Utils/Button";
+import { A } from "./Typography";
 import { useState, useEffect } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity.client";
 
+const servicesQuery = groq`*[_type=="services"]{service_name, slug} `;
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const [showServicesMenu, setShowServicesMenu] = useState(false);
+  const [data, setData] = useState(null);
+  async function fetchData() {
+    const servicesData = await client.fetch(servicesQuery);
+    const newData = {
+      servicesData,
+    };
+    setData(newData);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   useEffect(() => {
     showNav && (document.body.style.overflow = "hidden");
     !showNav && (document.body.style.overflow = "unset");
   }, [showNav]);
 
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <header className="md:w-full xl:w-[1186px] justify-between flex md:mx-auto mx-[24px] mt-3 items-center">
-      <div className="flex items-center">
+    <header className="w-full md:max-w-[1140px] justify-between flex px-[24px] mx-auto mt-3 items-center">
+      <nav className="flex items-center">
         <Link href="/" className="z-[5]">
           <Image
             src="/logos/logo.svg"
@@ -35,55 +54,31 @@ const Header = () => {
 
             <li
               className="pl-8 py-2"
-              onMouseOver={() => setShowServicesMenu(true)}
-              onMouseLeave={() => setShowServicesMenu(false)}
+              onMouseEnter={() =>
+                setShowServicesMenu((prev) => setShowServicesMenu(true))
+              }
+              onMouseLeave={(e) => {
+                setShowServicesMenu((prev) => setShowServicesMenu(false));
+              }}
             >
-              <A href="/services" className={" inline-block"}>
+              <A href="/services" className={"block"}>
                 Services
                 <ExpandMoreIcon />
               </A>
               {showServicesMenu && (
-                <div className="absolute bg-white shadow-[0px_0px_40px_3px_rgba(0,0,0,0.1)] p-6 mt-2 rounded-xl ">
+                <div className="absolute bg-white shadow-[0px_0px_40px_3px_rgba(0,0,0,0.1)] p-6 mt-2 rounded-xl z-10">
                   <ul className="columns-2">
-                    <li>
-                      <A
-                        href="/services/#full-dp-services"
-                        className={"text-[28px] !leading-8 "}
-                        onClick={() => setShowServicesMenu(false)}
-                      >
-                        Full DP Services
-                      </A>
-                    </li>
-
-                    <li>
-                      <A
-                        href="/services/#sms-service"
-                        className={"text-[28px] !leading-8 "}
-                        onClick={() => setShowServicesMenu(false)}
-                      >
-                        SMS Service
-                      </A>
-                    </li>
-
-                    <li>
-                      <A
-                        href="/services/#online-payment-system"
-                        className={"text-[28px] !leading-8 "}
-                        onClick={() => setShowServicesMenu(false)}
-                      >
-                        Online Payment System
-                      </A>
-                    </li>
-
-                    <li>
-                      <A
-                        href="/services/#research-services"
-                        className={"text-[28px] !leading-8  "}
-                        onClick={() => setShowServicesMenu(false)}
-                      >
-                        Research Services
-                      </A>
-                    </li>
+                    {data.servicesData.map((obj, idx) => (
+                      <li>
+                        <A
+                          href={`/services/#${obj?.slug?.current}`}
+                          className={"text-[28px] !leading-8 "}
+                          onClick={() => setShowServicesMenu(false)}
+                        >
+                          {obj.service_name}
+                        </A>
+                      </li>
+                    ))}
                     <li>
                       <A
                         href="/services/value-added-services"
@@ -115,7 +110,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
       <div className="hidden md:block">
         <a href="/sign-in" className="mr-8 font-jakarta tracking-[0.5px]">
           Sign In
@@ -145,7 +140,7 @@ const Header = () => {
         ></div>
       </div>
 
-      <div
+      <nav
         className={`h-screen w-screen md:hidden absolute top-0 right-0 z-[4] bg-blue px-6 ${
           showNav ? "scale-y-100" : "scale-y-0"
         } origin-top transition-transform duration-[600ms] ease-in`}
@@ -186,7 +181,7 @@ const Header = () => {
             >
               <li>
                 <A
-                  href="/services/#full-dp-services"
+                  href="/services/#full-dp-service"
                   className={"text-[28px] !leading-8 "}
                   onClick={() => setShowNav(false)}
                 >
@@ -276,7 +271,7 @@ const Header = () => {
             </A>
           </li>
         </ul>
-      </div>
+      </nav>
     </header>
   );
 };

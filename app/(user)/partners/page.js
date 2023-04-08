@@ -1,6 +1,6 @@
 "use client";
 import { Display1, Subtitle } from "@/components/Typography";
-import Button from "@/components/Button/Button";
+import Button from "@/components/Utils/Button";
 import SinglePartnerSection from "@/components/Partners/SinglePartnerSection";
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanity.client";

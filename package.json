@@ -13,7 +13,6 @@
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.13",
-
     "@portabletext/react": "^2.0.2",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.0.0",
@@ -23,6 +22,7 @@
     "react-dom": "18.2.0",
     "react-is": "^18.2.0",
     "react-portable-text": "^0.6.0",
+    "react-router-hash-link": "^2.4.3",
     "sanity": "^3.0.0",
     "styled-components": "^5.2.0",
     "swiper": "^9.1.0"

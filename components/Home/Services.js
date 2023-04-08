@@ -4,7 +4,7 @@ import SectionContainer from "../Utils/SectionContainer";
 import H2 from "../Typography/H2";
 import P from "../Typography/P";
 import H3 from "../Typography/H3";
-import Button from "../Button/Button";
+import Button from "../Utils/Button";
 import Image from "next/image";
 import urlFor from "@/lib/urlFor";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";

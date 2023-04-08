@@ -1,6 +1,6 @@
 import React from "react";
 import { H3, P } from "../Typography";
-import Button from "../Button/Button";
+import Button from "../Utils/Button";
 import Image from "next/image";
 import urlFor from "@/lib/urlFor";
 

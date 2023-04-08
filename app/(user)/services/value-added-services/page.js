@@ -1,7 +1,7 @@
 "use client";
 
 import { Display1, Subtitle } from "@/components/Typography";
-import Button from "@/components/Button/Button";
+import Button from "@/components/Utils/Button";
 import ContactUsBanner from "@/components/ContactUsBanner";
 import ServicesGrid from "@/components/Services/ServicesGrid";
 import { groq } from "next-sanity";

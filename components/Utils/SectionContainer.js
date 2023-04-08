@@ -3,7 +3,8 @@ import React from "react";
 const SectionContainer = (props) => {
   return (
     <div
-      className={` box-border mx-[24px] lg:max-w-[980px] md:mx-auto mb-[100px] relative ${props.className}`}
+      className={` box-border mx-[24px] md:max-w-[980px] md:mx-auto mb-[150px] relative ${props.className}`}
+      id={props.id}
     >
       {props.children}
     </div>

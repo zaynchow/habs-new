@@ -14,7 +14,7 @@ const Button = ({
   return (
     <Link
       className={`md:pl-9 md:py-2.5 pl-6 py-2  ${
-        arrow ? "md:pr-7 pr-3.5" : "md:pr-9 pr-6"
+        arrow ? "md:pr-7 pr-1" : "md:pr-9 pr-6"
       } ${
         bgColor == "transparent" && "px-0"
       } ${bgColor} font-jakarta font-medium rounded-[50px] tracking-[0.5px] w-[fit-content] inline-block ${
@@ -32,7 +32,15 @@ const Button = ({
         >
           {children}
         </P>
-        {arrow && <ArrowRightAltIcon className="ml-2" />}
+        {arrow && (
+          <ArrowRightAltIcon
+            className={`ml-2 text-[30px] ${
+              bgColor == "bg-blue" || bgColor == "bg-black"
+                ? "text-white"
+                : "text-black"
+            }`}
+          />
+        )}
       </div>
     </Link>
   );

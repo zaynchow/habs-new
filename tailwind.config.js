@@ -15,6 +15,15 @@ module.exports = {
       black: "#000000",
       blue: "#0C0F26",
     },
+    screens: {
+      // => @media (min-width: 640px) { ... }
+
+      md: "1028px",
+      // => @media (min-width: 1024px) { ... }
+
+      lg: "1200px",
+      // => @media (min-width: 1280px) { ... }
+    },
 
     fontFamily: {
       jakarta: ["var(--font-jakarta)", ...fontFamily.sans],

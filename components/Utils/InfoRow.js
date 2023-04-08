@@ -1,7 +1,7 @@
 import React from "react";
 import SectionContainer from "./SectionContainer";
 import { H3, P } from "../Typography";
-import Button from "../Button/Button";
+import Button from "./Button";
 
 const InfoRow = ({ className, title, button, desc, link = "/" }) => {
   return (

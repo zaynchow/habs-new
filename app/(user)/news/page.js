@@ -2,7 +2,7 @@
 import HighlightedNews from "@/components/News/HighlightedNews";
 import React from "react";
 import { Display1, Subtitle } from "@/components/Typography";
-import Button from "@/components/Button/Button";
+import Button from "@/components/Utils/Button";
 import SingleNewsBanner from "@/components/News/SingleNewsBanner";
 import SectionContainer from "@/components/Utils/SectionContainer";
 import { groq } from "next-sanity";

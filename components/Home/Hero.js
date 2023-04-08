@@ -1,6 +1,6 @@
 import React from "react";
 import Display1 from "../Typography/Display1";
-import Button from "../Button/Button";
+import Button from "../Utils/Button";
 import { Subtitle } from "../Typography";
 import SectionContainer from "../Utils/SectionContainer";
 

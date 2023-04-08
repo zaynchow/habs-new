@@ -10,6 +10,15 @@ export default {
       validation: (rule) => rule.required(),
     },
     {
+      title: "Slug",
+      name: "slug",
+      type: "slug",
+      options: {
+        source: "service_name",
+        maxLength: 200,
+      },
+    },
+    {
       name: "service_short_desc",
       type: "array",
       of: [{ type: "block" }],

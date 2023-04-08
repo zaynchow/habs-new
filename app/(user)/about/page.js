@@ -7,8 +7,10 @@ import { client } from "@/lib/sanity.client";
 import LogoGrid from "@/components/LogoGrid";
 import CompanyGoals from "@/components/About/CompanyGoals";
 import { useState, useEffect } from "react";
-import Management from "@/components/Management-copy";
+import ManagementProfiles from "@/components/About/ManagementProfiles";
 import ContactUsBanner from "@/components/ContactUsBanner";
+import Timeline from "@/components/about//Timeline";
+import Abbreviation from "@/components/About/Abbreviation";
 
 const missionQuery = groq`*[_type=="locations"] | order(_createdAt asc)`;
 const peopleQuery = groq`*[_type=="people"] | order(_createdAt asc)`;
@@ -43,9 +45,11 @@ const About = () => {
         </Display1>
       </div>
       <Intro />
+      <Abbreviation />
+      <Timeline />
       <CompanyGoals />
       <LogoGrid data={data.logoData} />
-      <Management data={data.peopleData} />
+      <ManagementProfiles data={data.peopleData} />
       <ContactUsBanner />
     </div>
   );

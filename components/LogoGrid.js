@@ -5,10 +5,10 @@ import { client } from "@/lib/sanity.client";
 import urlFor from "@/lib/urlFor";
 import Image from "next/image";
 
-const LogoGrid = ({ data }) => {
+const LogoGrid = ({ data, className }) => {
   return (
-    <SectionContainer className="pb-[50px]">
-      <div className="grid grid-rows-3 grid-cols-2 md:grid-rows-2 md:grid-cols-3 md:gap-x-4 gap-16 md:gap-y-16">
+    <SectionContainer className={` ${className}`}>
+      <div className="grid grid-rows-3 grid-cols-2 md:grid-rows-2 md:grid-cols-3 md:gap-x-4 gap-16 md:gap-y-16 ">
         {data.slice(0, 6).map((obj, i) => (
           <Image
             className="saturate-0 hover:saturate-100 h-fit max-h-[100px]"

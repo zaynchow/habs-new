@@ -2,7 +2,7 @@ import React from "react";
 import H2 from "../Typography/H2";
 import Subtitle from "../Typography/Subtitle";
 import SectionContainer from "../Utils/SectionContainer";
-import Button from "../Button/Button";
+import Button from "../Utils/Button";
 import P from "../Typography/P";
 
 const CommissionBanner = () => {

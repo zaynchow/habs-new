@@ -21,7 +21,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 const lora = Lora({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-lora",
 });
 

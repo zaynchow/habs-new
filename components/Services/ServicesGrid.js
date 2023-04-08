@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import SingleServiceSection from "./SingleServiceSection";
 
@@ -12,7 +13,7 @@ const ServicesGrid = ({ data }) => {
           includeAccordions={obj.include_accordions}
           accordions={obj.accordions}
           image={obj.service_img}
-          key={index}
+          id={obj?.slug?.current}
         />
       ))}
     </>
