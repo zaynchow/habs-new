@@ -32,11 +32,11 @@ const SocialIcons = ({ className }) => {
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 506.86 506.86"
-          shape-rendering="geometricPrecision"
-          text-rendering="geometricPrecision"
-          image-rendering="optimizeQuality"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          shapeRendering="geometricPrecision"
+          textRendering="geometricPrecision"
+          imageRendering="optimizeQuality"
+          fillRule="evenodd"
+          clipRule="evenodd"
           fill="currentColor"
           className={`text-blue hover:text-yellow w-[35px] h-[35px] ${className} `}
         >
@@ -57,11 +57,11 @@ const SocialIcons = ({ className }) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 3333 3333"
-          shape-rendering="geometricPrecision"
-          text-rendering="geometricPrecision"
-          image-rendering="optimizeQuality"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          shapeRendering="geometricPrecision"
+          textRendering="geometricPrecision"
+          imageRendering="optimizeQuality"
+          fillRule="evenodd"
+          clipRule="evenodd"
           fill="currentColor"
           className={`text-blue hover:text-yellow w-[35px] h-[35px] ${className}`}
         >
@@ -72,11 +72,11 @@ const SocialIcons = ({ className }) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 333333 333333"
-          shape-rendering="geometricPrecision"
-          text-rendering="geometricPrecision"
-          image-rendering="optimizeQuality"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          shapeRendering="geometricPrecision"
+          textRendering="geometricPrecision"
+          imageRendering="optimizeQuality"
+          fillRule="evenodd"
+          clipRule="evenodd"
           fill="currentColor"
           className={`text-blue hover:text-yellow w-[35px] h-[35px] ${className}`}
         >

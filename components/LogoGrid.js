@@ -9,8 +9,7 @@ const LogoGrid = ({ data, className }) => {
     <SectionContainer className={` ${className}`}>
       <div className="grid grid-rows-3 grid-cols-2 md:grid-rows-2 md:grid-cols-3 md:gap-x-4 gap-16 md:gap-y-16 ">
         {data.slice(0, 6).map((obj, i) => (
-          <A href={`/partners/#${obj?.slug?.current}`}>
-            {console.log(data)}
+          <A href={`/partners/#${obj?.slug?.current}`} key={i}>
             <Image
               className="saturate-0 hover:saturate-100 h-fit max-h-[100px]"
               src={urlFor(obj.image).url()}

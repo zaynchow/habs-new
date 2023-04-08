@@ -169,10 +169,10 @@ const Header = () => {
                 setShowServicesMenu((prev) => !prev);
               }}
             >
-              <div className="whitespace-nowrap">
+              <span className="whitespace-nowrap">
                 Services
                 <ExpandMoreIcon className="-rotate-90" />
-              </div>
+              </span>
             </A>
             <ul
               className={`${
