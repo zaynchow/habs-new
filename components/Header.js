@@ -57,9 +57,9 @@ const Header = () => {
               onMouseEnter={() =>
                 setShowServicesMenu((prev) => setShowServicesMenu(true))
               }
-              onMouseLeave={(e) => {
-                setShowServicesMenu((prev) => setShowServicesMenu(false));
-              }}
+              onMouseLeave={() =>
+                setShowServicesMenu((prev) => setShowServicesMenu(false))
+              }
             >
               <A href="/services" className={"block"}>
                 Services
