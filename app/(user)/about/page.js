@@ -9,12 +9,12 @@ import CompanyGoals from "@/components/About/CompanyGoals";
 import { useState, useEffect } from "react";
 import ManagementProfiles from "@/components/About/ManagementProfiles";
 import ContactUsBanner from "@/components/ContactUsBanner";
-import Timeline from "@/components/about/Timeline";
+import Timeline from "@/components/About/Timeline";
 import Abbreviation from "@/components/About/Abbreviation";
 
 const missionQuery = groq`*[_type=="locations"] | order(_createdAt asc)`;
 const peopleQuery = groq`*[_type=="people"] | order(_createdAt asc)`;
-const logoQuery = groq`*[_type=="partners"]{image}`;
+const logoQuery = groq`*[_type=="partners"]{image,slug}`;
 const About = () => {
   const [data, setData] = useState(null);
   async function fetchData() {
