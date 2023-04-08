@@ -17,16 +17,19 @@ const Partners = () => {
     const newData = {
       partnersData,
     };
-    let hash = window.location.hash;
     setData(newData);
-    if (hash) {
-      let element = document.querySelectorAll(`${hash}`)[0];
-      element?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
   }
 
   useEffect(() => {
     fetchData();
+    setTimeout(() => {
+      let hash = window.location.hash;
+
+      if (hash) {
+        let element = document.querySelectorAll(`${hash}`)[0];
+        element?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 500);
   }, []);
 
 
