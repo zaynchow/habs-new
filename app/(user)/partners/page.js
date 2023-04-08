@@ -29,9 +29,7 @@ const Partners = () => {
     fetchData();
   }, []);
 
-  if (!data) {
-    return <div>Loading...</div>;
-  }
+
   return (
     <div>
       <div className="mx-6 py-[150px]">
@@ -52,7 +50,7 @@ const Partners = () => {
         </div>
       </div>
       <SectionContainer>
-        {data.partnersData.map((obj, index) => (
+        {data?.partnersData.map((obj, index) => (
           <>
             <SinglePartnerSection
               name={obj.name}
@@ -69,7 +67,7 @@ const Partners = () => {
                   : "py-24"
               }
             />
-            {index != data.partnersData.length - 1 && (
+            {index != data?.partnersData.length - 1 && (
               <hr className="w-full  border-[1px] " />
             )}
           </>
