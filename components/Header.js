@@ -55,10 +55,10 @@ const Header = () => {
             <li
               className="pl-8 py-2"
               onMouseEnter={() => {
-                setShowServicesMenu((prev) => setShowServicesMenu(true));
+                setShowServicesMenu(true);
               }}
               onMouseLeave={() => {
-                setShowServicesMenu((prev) => setShowServicesMenu(false));
+                setShowServicesMenu(false);
               }}
             >
               <A href={"/services"} className={"block"}>
