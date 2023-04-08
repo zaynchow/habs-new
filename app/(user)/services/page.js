@@ -24,11 +24,6 @@ const ServicesPage = () => {
       servicesData,
     };
     setData(newData);
-    // let hash = window.location.hash;
-    // if (hash) {
-    //   let element = document.querySelectorAll(`${hash}`)[0];
-    //   element?.scrollIntoView({ behavior: "smooth", block: "start" });
-    // }
   }
 
   useEffect(() => {

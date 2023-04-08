@@ -17,6 +17,18 @@ const LogoGrid = ({ data, className }) => {
               width={250}
               height={300}
               key={i}
+              onClick={() => {
+                setTimeout(() => {
+                  let element = document.querySelectorAll(
+                    `#${obj?.slug?.current}`
+                  )[0];
+                  element?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }, 500);
+                return clearTimeout();
+              }}
             />
           </A>
         ))}
