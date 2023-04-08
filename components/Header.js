@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Utils/Button";
-import { A } from "./Typography";
+import { A, P } from "./Typography";
 import { useState, useEffect } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { groq } from "next-sanity";
