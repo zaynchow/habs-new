@@ -73,7 +73,18 @@ const Header = () => {
                         <A
                           href={`/services/#${obj?.slug?.current}`}
                           className={"text-[28px] !leading-8 "}
-                          onClick={() => setShowServicesMenu(false)}
+                          onClick={() => {
+                            setShowServicesMenu(false);
+                            setTimeout(() => {
+                              let element = document.querySelectorAll(
+                                `#${obj?.slug?.current}`
+                              )[0];
+                              element?.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start",
+                              });
+                            }, 500);
+                          }}
                         >
                           {obj.service_name}
                         </A>
