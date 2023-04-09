@@ -62,7 +62,6 @@ const HomePage = () => {
           <Popup setPopupVisibility={setPopupVisibility} />
         </Dialog>
       )}
-
       <Hero />
       <Counter data={data.counterData} />
       <LogoGrid data={data.logoData} />
