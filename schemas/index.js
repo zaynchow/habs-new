@@ -11,6 +11,7 @@ import People from "./People";
 import ContactInfo from "./ContactInfo";
 import Testimonials from "./Testimonials";
 import Break from "./Break";
+import Timeline from "./Timeline";
 
 export const schemaTypes = [
   CompanyInfo,
@@ -23,6 +24,7 @@ export const schemaTypes = [
   Social,
   People,
   Testimonials,
+  Timeline,
   Authors,
   ContactInfo,
   Break,

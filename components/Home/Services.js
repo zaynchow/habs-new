@@ -66,7 +66,22 @@ const Services = ({ data }) => {
               }}
             />
 
-            <Button className={"bg-yellow "} link="/" arrow>
+            <Button
+              className={"bg-yellow "}
+              arrow
+              link={`/services/#${option?.slug?.current}`}
+              onClick={() => {
+                setTimeout(() => {
+                  let element = document.querySelectorAll(
+                    `#${option?.slug?.current}`
+                  )[0];
+                  element?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }, 750);
+              }}
+            >
               Learn More
             </Button>
           </div>

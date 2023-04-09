@@ -4,7 +4,7 @@ import { H2, Subtitle, H4, P } from "../Typography";
 import Image from "next/image";
 import YoutubeEmbed from "../Utils/YoutubeEmbed";
 
-const Timeline = () => {
+const Timeline = ({ data }) => {
   return (
     <SectionContainer className="mb-[150px]">
       <H2>Take a look at our progress</H2>
@@ -51,7 +51,9 @@ const Timeline = () => {
           <li className="w-full ">
             <div className="flex items-start md:flex-row flex-col relative md:gap-12 gap-6">
               <div className="md:w-1/2 w-full h-full relative">
-                <YoutubeEmbed embedId="rokGy0huYEA" />
+                <YoutubeEmbed
+                  embedId={data.video.slice(data.video.lastIndexOf("/") + 1)}
+                />
               </div>
 
               <div className="md:w-1/2 ">

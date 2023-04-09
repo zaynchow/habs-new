@@ -9,7 +9,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanity.client";
 
-const servicesQuery = groq`*[_type=="services"]{service_name, slug} `;
+const servicesQuery = groq`*[_type=="services"] | order(_createdAt asc){service_name, slug}`;
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const [showServicesMenu, setShowServicesMenu] = useState(false);
@@ -83,7 +83,7 @@ const Header = () => {
                                 behavior: "smooth",
                                 block: "start",
                               });
-                            }, 500);
+                            }, 750);
                           }}
                         >
                           {obj.service_name}

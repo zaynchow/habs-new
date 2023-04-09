@@ -36,7 +36,7 @@ const CommissionBanner = () => {
               on investment.
             </span>
           </P>
-          <Button bgColor="bg-yellow" link="/" className="mt-6" arrow>
+          <Button bgColor="bg-yellow" link="/contact" className="mt-6" arrow>
             Contact Us To Enroll
           </Button>
         </div>

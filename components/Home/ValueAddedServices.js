@@ -18,14 +18,41 @@ const ValueAddedServices = ({ data }) => {
               <InfoRow
                 title={obj.service_name}
                 button
-                link="/"
                 className="border-b-2 border-solid border-black"
                 key={index}
+                link={`/services/value-added-services/#${obj?.slug?.current}`}
+                onClick={() => {
+                  setTimeout(() => {
+                    let element = document.querySelectorAll(
+                      `#${obj?.slug?.current}`
+                    )[0];
+                    element?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }, 750);
+                }}
               />
             );
           }
           return (
-            <InfoRow title={obj.service_name} button link="/" key={index} />
+            <InfoRow
+              title={obj.service_name}
+              button
+              link={`/services/value-added-services/#${obj?.slug?.current}`}
+              onClick={() => {
+                setTimeout(() => {
+                  let element = document.querySelectorAll(
+                    `#${obj?.slug?.current}`
+                  )[0];
+                  element?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }, 750);
+              }}
+              key={index}
+            />
           );
         })}
       </div>

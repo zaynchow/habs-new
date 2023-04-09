@@ -10,6 +10,7 @@ const Button = ({
   outline,
   className,
   arrow = false,
+  onClick,
 }) => {
   return (
     <Link
@@ -21,6 +22,7 @@ const Button = ({
         outline && "border-2 border-black border-solid"
       } ${className}`}
       href={link}
+      onClick={onClick}
     >
       <div className="flex items-center">
         <P

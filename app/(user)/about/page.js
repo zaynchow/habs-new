@@ -15,17 +15,20 @@ import Abbreviation from "@/components/About/Abbreviation";
 const missionQuery = groq`*[_type=="locations"] | order(_createdAt asc)`;
 const peopleQuery = groq`*[_type=="people"] | order(_createdAt asc)`;
 const logoQuery = groq`*[_type=="partners"]{image,slug}`;
+const timelineQuery = groq`*[_type=="timeline"]`;
 const About = () => {
   const [data, setData] = useState(null);
   async function fetchData() {
     const missionData = await client.fetch(missionQuery);
     const logoData = await client.fetch(logoQuery);
     const peopleData = await client.fetch(peopleQuery);
+    const timelineData = await client.fetch(timelineQuery);
 
     const newData = {
       missionData,
       logoData,
       peopleData,
+      timelineData,
     };
     setData(newData);
   }
@@ -46,7 +49,7 @@ const About = () => {
       </div>
       <Intro />
       <Abbreviation />
-      <Timeline />
+      <Timeline data={data.timelineData[0]} />
       <CompanyGoals />
       <LogoGrid data={data.logoData} />
       <ManagementProfiles data={data.peopleData} />
