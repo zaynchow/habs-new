@@ -39,7 +39,7 @@ const Abbreviation = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrIndex((prev) => (currIndex == 4 ? 0 : prev + 1));
-    }, 5000);
+    }, 3000);
     return () => clearInterval(timer);
   });
 

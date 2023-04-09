@@ -23,6 +23,7 @@ module.exports = {
 
       lg: "1200px",
       // => @media (min-width: 1280px) { ... }
+      xl: "1600px",
     },
 
     fontFamily: {
@@ -34,6 +35,8 @@ module.exports = {
       animation: {
         fadeIn: "fadeIn 1.5s ease-in",
         fadeOut: "fadeOut 0.75s ease-in",
+        slideInRight: "slideInRight 0.7s ease-in",
+        slideInLeft: "slideInLeft 0.7s ease-in",
       },
 
       keyframes: () => ({
@@ -44,6 +47,14 @@ module.exports = {
         fadeOut: {
           "0%": { opacity: 1 },
           "100%": { opacity: 0 },
+        },
+        slideInRight: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(-40%)" },
+        },
+        slideInLeft: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(44%)" },
         },
       }),
     },

@@ -36,7 +36,7 @@ const Management = ({ data }) => {
       <SectionContainer className="py-16 px-12 bg-blue mt-16">
         <div className="md:flex md:h-[520px] w-full">
           <div className="md:w-2/5 relative">
-            <div className="md:h-[85%] h-[360px] relative bg-black">
+            <div className="md:h-[85%] h-[280px] relative bg-black">
               <Image src={urlFor(data[currSlideIdx].image).url()} fill />
             </div>
             <div className="md:h-[15%] py-1 md:py-0 flex items-center bg-white pl-2">
