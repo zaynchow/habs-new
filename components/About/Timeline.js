@@ -34,7 +34,7 @@ const Timeline = ({ data }) => {
           <li className="mb-20 w-full">
             <div className="flex md:flex-row flex-col items-start md:h-[300px] h-[400px] relative md:gap-12 gap-6">
               <div className="md:w-1/2 w-full h-full relative">
-                <Image fill src={"/DSE.png"} />
+                <Image fill src={"/Founding-certificate.jpg"} />
               </div>
 
               <div className="md:w-1/2 ">
@@ -57,13 +57,8 @@ const Timeline = ({ data }) => {
               </div>
 
               <div className="md:w-1/2 ">
-                <H4 className={"!text-left mb-2 underline"}>
-                  Current Year Video
-                </H4>
-                <P>
-                  Empowering investors to achieve greater returns through
-                  professional brokerage services.
-                </P>
+                <H4 className={"!text-left mb-2 underline"}>{data.title}</H4>
+                <P>{data.desc}</P>
               </div>
             </div>
           </li>

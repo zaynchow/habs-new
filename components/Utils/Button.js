@@ -4,7 +4,7 @@ import P from "../Typography/P";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 const Button = ({
-  link,
+  link = "/",
   children,
   bgColor,
   outline,

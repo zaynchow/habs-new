@@ -9,7 +9,6 @@ const HighlightedNews = ({ data }) => {
   return (
     <SectionContainer className="bg-blue md:h-[420px] py-10 px-8 flex items-center gap-2">
       <div className="md:w-1/2 pr-12">
-        {console.log(data)}
         <div className="mb-10">
           <Subtitle className="!text-left text-yellow text-[16px]">
             HIGHLIGHT

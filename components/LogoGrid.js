@@ -8,7 +8,6 @@ const LogoGrid = ({ data, className }) => {
   return (
     <SectionContainer className={` ${className}`}>
       <div className="grid grid-rows-3 grid-cols-2 md:grid-rows-2 md:grid-cols-3 md:gap-x-4 gap-16 md:gap-y-16 grid-flow-row">
-        {console.log(data)}
         {data.slice(0, 6).map((obj, i) => (
           <A href={`/partners/#${obj?.slug?.current}`} key={i}>
             <Image

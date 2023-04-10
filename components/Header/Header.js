@@ -12,7 +12,7 @@ import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
 
 const servicesQuery = groq`*[_type=="services"] | order(_createdAt asc){service_name, slug}`;
-const valueAddedServicesQuery = groq`*[_type=="value-added-services"] | order(_createdAt asc){service_name, slug}`;
+const valueAddedServicesQuery = groq`*[_type=="value_added_services"] | order(_createdAt asc){service_name, slug}`;
 const Header = () => {
   const [data, setData] = useState(null);
   async function fetchData() {
