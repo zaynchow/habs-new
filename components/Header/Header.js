@@ -1,11 +1,7 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import Button from "../Utils/Button";
-import { A, P } from "../Typography";
 import { useState, useEffect } from "react";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanity.client";
 import MobileMenu from "./MobileMenu";
@@ -16,8 +12,11 @@ const valueAddedServicesQuery = groq`*[_type=="value_added_services"] | order(_c
 const Header = () => {
   const [data, setData] = useState(null);
   async function fetchData() {
-    const servicesData = await client.fetch(servicesQuery);
-    const valueAddedServicesData = await client.fetch(valueAddedServicesQuery);
+    const servicesData = await client.fetch(servicesQuery, "force-cache");
+    const valueAddedServicesData = await client.fetch(
+      valueAddedServicesQuery,
+      "force-cache"
+    );
     const newData = {
       servicesData,
       valueAddedServicesData,

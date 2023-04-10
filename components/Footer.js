@@ -16,7 +16,9 @@ const Footer = () => {
   const [data, setData] = useState(null);
 
   async function fetchData() {
-    const footerData = await client.fetch(footerQuery);
+    const footerData = await client.fetch(footerQuery, {
+      cache: "force-cache",
+    });
 
     const newData = {
       footerData,
