@@ -1,14 +1,10 @@
-import Header from "@/components/Header";
+import Header from "@/components/Header/Header";
 import "../globals.css";
 
 export const metadata = {
   title: "HABSL",
   description: "Haji Ahmad Brothers Securities LTD",
 };
-
-
-
-
 
 import { Plus_Jakarta_Sans, Lora } from "next/font/google";
 import Footer from "@/components/Footer";

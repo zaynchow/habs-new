@@ -2,20 +2,19 @@ import React from "react";
 import Display1 from "../Typography/Display1";
 import Button from "../Utils/Button";
 import { Subtitle } from "../Typography";
-import SectionContainer from "../Utils/SectionContainer";
-import Image from "next/image";
+
+
 
 const Hero = () => {
   return (
-    <div className=" py-[150px] mb-[100px]">
-      <div className=" absolute w-[45vw] h-full xl:top-[10%] md:top-[25vh]  right-0 translate-x-[44%]   animate-slideInLeft ">
+    <div className=" py-[200px] mb-[50px] ml-6 mr-[11vw] md:m-0 mx-auto border-box">
+      <div className=" md:absolute w-[45vw] md:h-full xl:top-[1vh] md:top-[6vh]  right-0 translate-x-[44%] hidden md:inline-block opacity-50 animate-fadeInHero">
         <svg
           id="bull"
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
           viewBox="0 0 720 576"
-          // style={"enable-background:new 0 0 720 576;"}
           className="scale-x-[-1]"
         >
           <g>
@@ -104,7 +103,7 @@ const Hero = () => {
           <path d="M267.2,337.7c-2.2-0.7-7-2.6-9.2-5.5c0,0,2.6,4.3,7.6,6.8C269,340.7,267.2,337.7,267.2,337.7z" />
         </svg>
       </div>
-      <div className="absolute w-[35vw] h-full xl:top-[12vh] md:top-[25vh]  left-0 -translate-x-[40%] animate-slideInRight ">
+      <div className="absolute md:w-[35vw] md:h-full  w-[190vw]  h-[180vh] overflow-hidden  top-0 translate-x-[50%] opacity-50  xl:top-[2vw] md:top-[5vw]  md:left-0 md:-translate-x-[40%] right-0 animate-fadeInHero ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="Layer_1"
@@ -236,7 +235,7 @@ const Hero = () => {
         Achieving financial
         <span className="text-yellow"> success</span>
       </Display1>
-      <Subtitle className=" md:text-[20px] font-light md:mt-6 md:mb-9 my-6 tracking-[1.2px]  md:!text-center !text-left ">
+      <Subtitle className=" md:text-[20px] font-light md:mt-6 md:mb-9 my-6 tracking-[1.2px]  md:!text-center !text-left mx-0 md:mx-auto">
         Your trusted investment partner since 1956
       </Subtitle>
       <div className="md:text-center flex flex-col md:block ">
@@ -250,9 +249,9 @@ const Hero = () => {
         </Button>
         <Button
           link="/"
-          bgColor="transparent"
+          bgColor="bg-white"
           outline={true}
-          className={"px-9 mt-2 md:mt-0"}
+          className={"px-9 mt-2 md:mt-0 z-10"}
         >
           See Services
         </Button>

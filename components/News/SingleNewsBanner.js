@@ -24,7 +24,7 @@ const SingleNewsBanner = ({ img, title, summary, slug }) => {
           bgColor="bg-transparent"
           className="text-left !p-0"
           arrow
-          link={`http://localhost:3000/news/${slug.current}`}
+          link={`/news/${slug.current}`}
         >
           Read More
         </Button>

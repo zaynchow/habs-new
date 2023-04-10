@@ -1,11 +1,36 @@
+"use client";
+
 import React from "react";
 import { P, A } from "./Typography";
 import SectionContainer from "./Utils/SectionContainer";
 import Image from "next/image";
 import SocialIcons from "./Utils/SocialIcons";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity.client";
+
+const footerQuery = groq`*[_type=="footer-info"]`;
 
 const Footer = () => {
+  const [data, setData] = useState(null);
+
+  async function fetchData() {
+    const footerData = await client.fetch(footerQuery);
+
+    const newData = {
+      footerData,
+    };
+    setData(newData);
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="bg-blue pt-16 pb-4">
       <SectionContainer className="!mb-0">
@@ -21,8 +46,7 @@ const Footer = () => {
                 />
               </Link>
               <P className="text-[14px] text-white  mt-4">
-                Haji Ahmad Brothers Securities Limited is one of the found
-                companies in Bangladesh.
+                {data.footerData[0].desc}
               </P>
             </div>
             <div className="max-w-[280px]">
@@ -30,19 +54,20 @@ const Footer = () => {
                 Office
               </P>
               <br />
-              <P className="text-white ">
-                Uday Tower (6th floor), 57-57/A, Gulshan Avenue-1, Dhaka-1212
-              </P>
+              <P className="text-white ">{data.footerData[0].address}</P>
               <br />
               <A
                 className="text-white underline mt-3"
-                href="mailto:information@habsl.net"
+                href={`mailto:${data.footerData[0].email_address}`}
               >
-                information@habsl.net
+                {data.footerData[0].email_address}
               </A>
               <br />
-              <A className="text-white mt-3" href="tel:+8801844485548">
-                +880 1844 485548
+              <A
+                className="text-white mt-3"
+                href={`tel:${data.footerData[0].phone_num}`}
+              >
+                {data.footerData[0].phone_num}
               </A>
               <br />
             </div>
@@ -83,8 +108,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col">
             <P className="md:text-[14px] text-[12px] text-white">
-              HABSL Membership details: TREC # 041, Dhaka Stock Exchange Ltd.
-              Sec Reg No. 3.1/DSE-41/2006/127
+              {data.footerData[0].license_cert}
             </P>
             <P className="md:text-[14px] text-[12px] text-white">
               © Copyright HABS LTD 2023. All Rights Reserved.

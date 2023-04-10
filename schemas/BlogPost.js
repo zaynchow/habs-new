@@ -38,5 +38,13 @@ export default {
       of: [{ type: "block" }, { type: "break" }],
       validation: (rule) => rule.required(),
     },
+    {
+      name: "highlighted",
+      title: "Highlighted Blog",
+      type: "boolean",
+      options: {
+        layout: "checkbox",
+      },
+    },
   ],
 };

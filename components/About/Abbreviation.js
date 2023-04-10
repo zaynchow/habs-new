@@ -39,18 +39,21 @@ const Abbreviation = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrIndex((prev) => (currIndex == 4 ? 0 : prev + 1));
-    }, 3000);
+    }, 2000);
     return () => clearInterval(timer);
   });
 
   return (
     <SectionContainer className=" bg-blue flex justify-center flex-col items-center pb-[50px]">
-      <h2 className="font-lora md:text-[150px] text-[80px] !font-light !tracking-wider  !leading-0 !pt-0 !mt-0">
+      <h2 className="font-lora md:text-[150px] text-[80px] !font-light !tracking-wider  !leading-0 !pt-0 !mt-0 ">
         {descriptions.map((obj, idx) => (
           <span
             className={`cursor-pointer ${
-              idx == currIndex ? "text-white " : "text-yellow"
+              idx == currIndex
+                ? "text-yellow !opacity-100"
+                : "text-white opacity-30"
             }`}
+            onClick={() => setCurrIndex(idx)}
           >
             {obj.letter}
           </span>

@@ -1,8 +1,20 @@
 export default {
-  name: "contact-info",
+  name: "footer-info",
   type: "document",
-  title: "Contact Info",
+  title: "Footer Info",
   fields: [
+    {
+      name: "desc",
+      type: "string",
+      title: "Company Highlight Description",
+      validation: (rule) => rule.required(),
+    },
+    {
+      name: "license_cert",
+      type: "string",
+      title: "License & Certifications",
+      validation: (rule) => rule.required(),
+    },
     {
       name: "phone_num",
       type: "string",

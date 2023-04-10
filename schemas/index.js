@@ -8,7 +8,7 @@ import BlogPost from "./BlogPost";
 import Social from "./Social";
 import Authors from "./Authors";
 import People from "./People";
-import ContactInfo from "./ContactInfo";
+import FooterInfo from "./FooterInfo";
 import Testimonials from "./Testimonials";
 import Break from "./Break";
 import Timeline from "./Timeline";
@@ -26,6 +26,6 @@ export const schemaTypes = [
   Testimonials,
   Timeline,
   Authors,
-  ContactInfo,
+  FooterInfo,
   Break,
 ];

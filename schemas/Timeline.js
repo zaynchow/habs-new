@@ -6,7 +6,17 @@ export default {
     {
       name: "video",
       type: "url",
-      title: "Video Link",
+      title: "Current Year Video Link",
+    },
+    {
+      name: "title",
+      type: "string",
+      title: "Current Year Video Title",
+    },
+    {
+      name: "desc",
+      type: "string",
+      title: "Current Year Video Desc",
     },
   ],
 };

@@ -2,7 +2,7 @@
 import HighlightedNews from "@/components/News/HighlightedNews";
 import React from "react";
 import { Display1, Subtitle } from "@/components/Typography";
-import Button from "@/components/Utils/Button";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import SingleNewsBanner from "@/components/News/SingleNewsBanner";
 import SectionContainer from "@/components/Utils/SectionContainer";
 import { groq } from "next-sanity";
@@ -11,15 +11,18 @@ import { useState, useEffect } from "react";
 import SocialIcons from "@/components/Utils/SocialIcons";
 import { P } from "@/components/Typography";
 
-const blogQuery = groq`*[_type=="blog_posts"] | order(_createdAt asc)`;
+const blogQuery = groq`*[_type=="blog_posts"] | order(_createdAt asc){title,image,summary,slug}`;
+const highlightQuery = groq`*[_type=="blog_posts" && highlighted==true]`;
 
 const news = () => {
   const [data, setData] = useState(null);
 
   async function fetchData() {
     const blogData = await client.fetch(blogQuery);
+    const highlightData = await client.fetch(highlightQuery);
     const newData = {
       blogData,
+      highlightData,
     };
     setData(newData);
   }
@@ -56,13 +59,12 @@ const news = () => {
           <SocialIcons />
         </div>
       </div>
-      <HighlightedNews />
+      <HighlightedNews data={data.highlightData[0]} />
 
       <SectionContainer className="grid md:grid-cols-2 gap-12 ">
         {currentPosts.map((obj, index) => (
           <SingleNewsBanner
             title={obj.title}
-            desc={obj.desc}
             img={obj.image}
             summary={obj.summary}
             slug={obj.slug}
@@ -77,12 +79,7 @@ const news = () => {
         >
           {currentPage != 1 && (
             <>
-              <img
-                className="inline-block mr-2 rotate-180"
-                src="/icons/arrow-right.svg"
-                width={20}
-                height={20}
-              />
+              <ArrowRightAltIcon className="inline-block rotate-180" />
               <P className={"inline-block "}>Prev</P>
             </>
           )}
@@ -113,12 +110,7 @@ const news = () => {
           {currentPage != pageNumbers.length && (
             <>
               <P className={"inline-block "}>Next</P>
-              <img
-                className="inline-block ml-2"
-                src="/icons/arrow-right.svg"
-                width={20}
-                height={20}
-              />
+              <ArrowRightAltIcon />
             </>
           )}
         </div>

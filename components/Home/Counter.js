@@ -9,7 +9,7 @@ const Counter = ({ data }) => {
   const { book_size, num_of_clients, years_in_brokerage, num_of_branches } =
     data;
   return (
-    <SectionContainer className="pb-[50px]">
+    <SectionContainer className="py-[50px] bg-white">
       <Display2>
         A generation of ownership built <br /> on HABSL
       </Display2>

@@ -15,7 +15,7 @@ import Dialog from "@mui/material/Dialog";
 import Popup from "@/components/Popup.js/Popup";
 
 const counterQuery = groq`*[_type=="company-info"][0]{book_size, num_of_clients, years_in_brokerage, num_of_branches}`;
-const logoQuery = groq`*[_type=="partners"]{image,slug}`;
+const logoQuery = groq`*[_type=="partners"] | order(_createdAt asc){image,slug}`;
 const servicesQuery = groq`*[_type=="services"] | order(_createdAt asc){service_img, service_short_desc, service_name, slug} `;
 const valueAddedServicesQuery = groq`*[_type=="value_added_services"] | order(_createdAt asc){service_name, slug}`;
 const testimonialsQuery = groq`*[_type=="testimonials"]`;
@@ -56,7 +56,7 @@ const HomePage = () => {
   }
 
   return (
-    <main>
+    <main className="relative overflow-hidden">
       {popupVisibility && (
         <Dialog open onClose={() => setPopupVisibility(false)} maxWidth="100vw">
           <Popup setPopupVisibility={setPopupVisibility} />
