@@ -12,6 +12,7 @@ import FooterInfo from "./FooterInfo";
 import Testimonials from "./Testimonials";
 import Break from "./Break";
 import Timeline from "./Timeline";
+import CustomButtons from "./CustomButtons";
 
 export const schemaTypes = [
   CompanyInfo,
@@ -25,7 +26,7 @@ export const schemaTypes = [
   People,
   Testimonials,
   Timeline,
-  Authors,
+  CustomButtons,
   FooterInfo,
   Break,
 ];

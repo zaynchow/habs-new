@@ -67,7 +67,8 @@ const Services = ({ data }) => {
             />
 
             <Button
-              className={"bg-yellow "}
+              bgColor={"bg-yellow"}
+              className={"hover:text-white"}
               arrow
               link={`/services/#${option?.slug?.current}`}
               onClick={() => {

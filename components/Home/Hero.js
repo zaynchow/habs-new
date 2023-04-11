@@ -248,10 +248,10 @@ const Hero = () => {
           Join Us
         </Button>
         <Button
-          link="/"
+          link="/services"
           bgColor="bg-white"
           outline={true}
-          className={"px-9 mt-2 md:mt-0 z-10"}
+          className={"px-9 mt-2 md:mt-0"}
         >
           See Services
         </Button>

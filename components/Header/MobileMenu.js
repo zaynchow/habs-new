@@ -2,13 +2,46 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { A } from "../Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Button from "../Utils/Button";
 
-const MobileMenu = ({ showServicesMenu, setShowServicesMenu, data }) => {
+const MobileMenu = ({ data }) => {
   const [showNav, setShowNav] = useState(false);
+  const [showServicesMenu, setShowServicesMenu] = useState(false);
+  const [showValueAddedServicesMenu, setShowValueAddedServicesMenu] =
+    useState(false);
+
+  const allDropdownStates = [
+    setShowServicesMenu,
+    setShowValueAddedServicesMenu,
+  ];
   useEffect(() => {
     showNav && (document.body.style.overflow = "hidden");
     !showNav && (document.body.style.overflow = "unset");
   }, [showNav]);
+
+  const menuItems = [
+    { name: "Home", url: "/", dropdown: false },
+    { name: "About", url: "/about", dropdown: false },
+    {
+      name: "Services",
+      url: "/services",
+      dropdown: true,
+      dropdownState: showServicesMenu,
+      dropdownSetState: setShowServicesMenu,
+      data: data.servicesData,
+    },
+    {
+      name: "VAS",
+      url: "/value-added-services",
+      dropdown: true,
+      dropdownState: showValueAddedServicesMenu,
+      dropdownSetState: setShowValueAddedServicesMenu,
+      data: data.valueAddedServicesData,
+    },
+    { name: "Our Partners", url: "/partners", dropdown: false },
+    { name: "News", url: "/news", dropdown: false },
+    { name: "Contact", url: "/contact", dropdown: false },
+  ];
   return (
     <>
       <div
@@ -37,17 +70,82 @@ const MobileMenu = ({ showServicesMenu, setShowServicesMenu, data }) => {
         } origin-top transition-transform duration-[600ms] ease-in`}
       >
         <ul
-          className={`flex flex-col items-center text-white h-full justify-center w-full gap-5 ${
+          className={`flex flex-col items-center  text-white h-full justify-center w-full gap-5 relative ${
             showNav ? "animate-fadeIn" : "animate-fadeOut"
           } `}
         >
-          <li className=" ">
+          {menuItems.map((obj, idx) => {
+            return (
+              <li
+                className={`relative w-[90%] pb-6 after:bottom-0 after:opacity-20 after:content-[""] after:absolute after:left-0 after:w-full after:border-solid after:border-[0.5px] after:border-white transition`}
+              >
+                <div className={` flex justify-between `}>
+                  <A
+                    className={"text-[25px]"}
+                    href={obj.url}
+                    onClick={() => setShowNav(false)}
+                  >
+                    {obj.name}
+                  </A>
+
+                  {obj.dropdown && (
+                    <ExpandMoreIcon
+                      className={`cursor-pointer transition ${
+                        obj.dropdownState && "-rotate-180"
+                      }`}
+                      onClick={(e) => {
+                        allDropdownStates.map(
+                          (func, idx) =>
+                            func != obj.dropdownSetState && func(false)
+                        );
+                        obj.dropdownSetState((prev) => !prev);
+                      }}
+                    />
+                  )}
+                </div>
+
+                {obj.dropdownState && obj.dropdown && (
+                  <ul className="flex flex-col gap-3 pt-10 ">
+                    {obj.data.map((service, idx) => (
+                      <li>
+                        <A
+                          href={`${obj.url}#${service.slug.current}`}
+                          className="cursor-pointer text-[20px]"
+                          onClick={() => {
+                            setShowNav(false);
+                            setTimeout(() => {
+                              let element = document.querySelectorAll(
+                                `#${service?.slug?.current}`
+                              )[0];
+                              element?.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start",
+                              });
+                            }, 750);
+                          }}
+                        >
+                          {service.service_name}
+                        </A>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            );
+          })}
+          <li className="flex justify-start items-start gap-4 w-[90%]">
+            <Button bgColor={"bg-yellow"}>Join Us</Button>
+            <Button bgColor={"bg-transparent outline text-white"}>
+              Sign Up
+            </Button>
+          </li>
+          {/* <li className="">
             <A
-              href="/"
-              className={`text-[28px] `}
+              href="/about"
+              className={"text-[28px] "}
               onClick={() => setShowNav(false)}
             >
-              Home
+              About Us
             </A>
           </li>
           <li className=" relative flex items-center">
@@ -120,15 +218,7 @@ const MobileMenu = ({ showServicesMenu, setShowServicesMenu, data }) => {
               </li>
             </ul>
           </li>
-          <li className="">
-            <A
-              href="/about"
-              className={"text-[28px] text-center"}
-              onClick={() => setShowNav(false)}
-            >
-              About Us
-            </A>
-          </li>
+
           <li className=" ">
             <A
               href="/partners"
@@ -155,12 +245,7 @@ const MobileMenu = ({ showServicesMenu, setShowServicesMenu, data }) => {
             >
               Contact
             </A>
-          </li>
-          <li className=" ">
-            <A href="https://munshicorp.com/careers/" className={"text-[28px]"}>
-              Careers
-            </A>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>

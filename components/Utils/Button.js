@@ -11,36 +11,47 @@ const Button = ({
   className,
   arrow = false,
   onClick,
+  target,
 }) => {
   return (
     <Link
-      className={`md:pl-9 md:py-2.5 pl-6 py-2  ${
+      className={`md:pl-9 md:py-2 pl-6 py-2  ${
         arrow ? "md:pr-7 pr-1" : "md:pr-9 pr-6"
       } ${
         bgColor == "transparent" && "px-0"
       } ${bgColor} font-jakarta font-medium rounded-[50px] tracking-[0.5px] w-[fit-content] inline-block ${
-        outline && "border-2 border-black border-solid"
-      } ${className}`}
+        outline && "outline-2 outline-black outline"
+      }  
+      ${
+        bgColor == "bg-yellow" &&
+        "hover:outline-2 hover:bg-transparent outline-yellow outline"
+      }
+      ${
+        (bgColor == "bg-black" || bgColor == "bg-blue") &&
+        "hover:outline-2 hover:bg-transparent outline-black outline hover:text-black"
+      }
+      ${
+        (bgColor == "bg-transparent" || bgColor == "bg-white") &&
+        outline &&
+        "hover:outline-2 hover:bg-black outline-black outline hover:text-white"
+      }
+      
+      ${
+        bgColor == "bg-blue" || bgColor == "bg-black"
+          ? "text-white "
+          : "text-black"
+      }
+      ${className}`}
       href={link}
       onClick={onClick}
+      target={target}
     >
       <div className="flex items-center">
-        <P
-          className={`inline-block md:text-[16px] text-[14px] ${
-            bgColor == "bg-blue" || bgColor == "bg-black"
-              ? "text-white"
-              : "text-black"
-          }`}
-        >
-          {children}
-        </P>
+        <P className={`inline-block md:text-[16px] text-[14px] `}>{children}</P>
         {arrow && (
           <ArrowRightAltIcon
-            className={`ml-2 text-[30px] ${
-              bgColor == "bg-blue" || bgColor == "bg-black"
-                ? "text-white"
-                : "text-black"
-            }`}
+            className={`ml-2 text-[30px] text-inherit
+            `}
           />
         )}
       </div>

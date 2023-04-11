@@ -52,7 +52,7 @@ const DesktopMenu = ({ data }) => {
                     {data.servicesData.map((obj, idx) => (
                       <li>
                         <A
-                          href={`/services/#${obj?.slug?.current}`}
+                          href={`/services#${obj?.slug?.current}`}
                           className={"text-[28px] !leading-8 "}
                           onClick={() => {
                             setShowServicesMenu(false);
@@ -74,7 +74,21 @@ const DesktopMenu = ({ data }) => {
                   </ul>
                   <div className="py-4 px-3 bg-blue flex justify-between items-center rounded-b-[10px] gap-8">
                     <P className="text-white font-semibold">Fees & Charges</P>
-                    <Button link="/" bgColor="bg-yellow">
+                    <Button
+                      link={`/services#fees`}
+                      onClick={() => {
+                        setShowServicesMenu(false);
+                        setTimeout(() => {
+                          let element = document.querySelectorAll(`#fees`)[0];
+                          element?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
+                        }, 750);
+                      }}
+                      bgColor="bg-yellow"
+                      className={"hover:text-white"}
+                    >
                       Learn More
                     </Button>
                   </div>
@@ -90,8 +104,8 @@ const DesktopMenu = ({ data }) => {
                 setShowValueAddedServicesMenu(false);
               }}
             >
-              <A href="/services/value-added-services" className={"block"}>
-                VAS{" "}
+              <A href="/value-added-services" className={"block"}>
+                VAS
                 <ExpandMoreIcon
                   className={`transition-all ${
                     showValueAddedServicesMenu && "-rotate-180"
@@ -104,7 +118,7 @@ const DesktopMenu = ({ data }) => {
                     {data.valueAddedServicesData.map((obj, idx) => (
                       <li>
                         <A
-                          href={`/services/value-added-services/#${obj?.slug?.current}`}
+                          href={`/value-added-services/#${obj?.slug?.current}`}
                           className={"text-[28px] !leading-8 "}
                           onClick={() => {
                             setShowValueAddedServicesMenu(false);
@@ -125,9 +139,15 @@ const DesktopMenu = ({ data }) => {
                     ))}
                   </ul>
                   <div className="py-4 px-3 bg-blue flex justify-between items-center rounded-b-[10px] gap-8">
-                    <P className="text-white font-semibold">Fees & Charges</P>
-                    <Button link="/" bgColor="bg-yellow">
-                      Learn More
+                    <P className="text-white font-semibold">
+                      For More Information
+                    </P>
+                    <Button
+                      link="tel:+8801844485548"
+                      bgColor="bg-yellow"
+                      className={"hover:text-white"}
+                    >
+                      Call Now
                     </Button>
                   </div>
                 </div>
@@ -147,10 +167,19 @@ const DesktopMenu = ({ data }) => {
         </div>
       </nav>
       <div className="hidden md:block">
-        <a href="/sign-in" className="mr-8 font-jakarta tracking-[0.5px]">
+        <a
+          href={data.customBtnsData[0].sign_in}
+          className="mr-8 font-jakarta tracking-[0.5px] cursor-pointer"
+          target="_blank"
+        >
           Sign In
         </a>
-        <Button link="/" outline={false} bgColor="bg-yellow">
+        <Button
+          link={data.customBtnsData[0].join_us}
+          outline={false}
+          bgColor="bg-yellow"
+          target="_blank"
+        >
           Join Us
         </Button>
       </div>

@@ -5,7 +5,7 @@ import { H2, Subtitle } from "../Typography";
 
 const Fees = ({ data }) => {
   return (
-    <SectionContainer>
+    <SectionContainer id="fees">
       <H2>Fees and Charges</H2>
       <Subtitle>
         Empowering Investors to Achieve Greater Returns through Professional
