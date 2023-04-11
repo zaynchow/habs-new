@@ -239,12 +239,7 @@ const Hero = () => {
         Your trusted investment partner since 1956
       </Subtitle>
       <div className="md:text-center flex flex-col md:block ">
-        <Button
-          link="/"
-          bgColor="bg-black"
-          outline={true}
-          className="mr-4 text-white"
-        >
+        <Button link="/" bgColor="bg-black" className="mr-4 text-white">
           Join Us
         </Button>
         <Button

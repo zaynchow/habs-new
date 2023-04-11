@@ -77,7 +77,7 @@ const MobileMenu = ({ data }) => {
           {menuItems.map((obj, idx) => {
             return (
               <li
-                className={`relative w-[90%] pb-6 after:bottom-0 after:opacity-20 after:content-[""] after:absolute after:left-0 after:w-full after:border-solid after:border-[0.5px] after:border-white transition`}
+                className={`relative w-[90%] pb-6 after:bottom-0 after:opacity-20 after:content-[""] after:absolute after:left-0 after:w-full after:border-solid after:border-[0.5px] after:border-white`}
               >
                 <div className={` flex justify-between `}>
                   <A
@@ -90,7 +90,7 @@ const MobileMenu = ({ data }) => {
 
                   {obj.dropdown && (
                     <ExpandMoreIcon
-                      className={`cursor-pointer transition ${
+                      className={`cursor-pointer transition-all ${
                         obj.dropdownState && "-rotate-180"
                       }`}
                       onClick={(e) => {

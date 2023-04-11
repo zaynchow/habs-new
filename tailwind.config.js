@@ -32,6 +32,11 @@ module.exports = {
       sans: ["var(--font-jakarta)", ...fontFamily.sans],
     },
     extend: {
+      boxShadow: {
+        borderBlack: "inset 0 0 0 1.5px #000",
+        borderYellow: "inset 0 0 0 1.5px #ffe600",
+        borderWhite: "inset 0 0 0 1px #fff",
+      },
       animation: {
         fadeIn: "fadeIn 1.5s ease-in",
         fadeOut: "fadeOut 0.75s ease-in",
