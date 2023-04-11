@@ -15,7 +15,7 @@ const Button = ({
 }) => {
   return (
     <Link
-      className={`md:pl-9 md:py-2 pl-6 py-2  ${
+      className={`md:pl-9 md:py-3 pl-6 py-2.5  ${
         arrow ? "md:pr-7 pr-3" : "md:pr-9 pr-6"
       } ${
         bgColor == "transparent" && "px-0"

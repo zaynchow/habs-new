@@ -135,7 +135,11 @@ const MobileMenu = ({ data }) => {
           })}
           <li className="flex justify-start items-start gap-4 w-[90%]">
             <Button bgColor={"bg-yellow"}>Join Us</Button>
-            <Button bgColor={"bg-transparent outline text-white"}>
+            <Button
+              bgColor={"bg-transparent"}
+              outline
+              className={"text-white shadow-borderWhite"}
+            >
               Sign Up
             </Button>
           </li>
