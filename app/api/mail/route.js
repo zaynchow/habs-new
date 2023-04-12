@@ -24,13 +24,13 @@ export async function POST(request) {
   mail
     .send(data)
     .then((response) => {
-      console.log("Success", response);
+
       return new Response("Success", {
         status: 200,
       });
     })
     .catch((error) => {
-      console.log("error", error);
+
       return new Response("Error", {
         status: 503,
       });

@@ -77,6 +77,7 @@ const MobileMenu = ({ data }) => {
           {menuItems.map((obj, idx) => {
             return (
               <li
+                key={idx}
                 className={`relative w-[90%] pb-6 after:bottom-0 after:opacity-20 after:content-[""] after:absolute after:left-0 after:w-full after:border-solid after:border-[0.5px] after:border-white`}
               >
                 <div className={` flex justify-between `}>
@@ -107,7 +108,7 @@ const MobileMenu = ({ data }) => {
                 {obj.dropdownState && obj.dropdown && (
                   <ul className="flex flex-col gap-3 pt-10 ">
                     {obj.data.map((service, idx) => (
-                      <li>
+                      <li key={idx}>
                         <A
                           href={`${obj.url}#${service.slug.current}`}
                           className="cursor-pointer text-[20px]"

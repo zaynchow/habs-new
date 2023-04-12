@@ -41,7 +41,7 @@ const Locations = ({ data }) => {
       </div>
       <div className="flex md:flex-row flex-col  gap-3 justify-center ">
         {option[0].offices.map((singleOffice, index) => (
-          <InfoBox title={singleOffice.title}>
+          <InfoBox title={singleOffice.title} key={index}>
             <P className="!block">
               <span className="font-semibold">Address: </span>
               {singleOffice.address}

@@ -47,7 +47,12 @@ const ContactForm = () => {
         <H3 className="text-white text-[35px] !leading-[38px] font-bold mb-9">
           Send us a message or call us for any questions.
         </H3>
-        <Button bgColor="bg-yellow" link="/" arrow>
+        <Button
+          bgColor="bg-yellow"
+          link="tel:+8801844485548"
+          arrow
+          className={"hover:text-white"}
+        >
           Call Now
         </Button>
       </div>
