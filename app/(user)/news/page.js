@@ -36,7 +36,7 @@ const news = () => {
   const pageNumbers = [];
 
   if (!data) {
-    return <div>Loading...</div>;
+    return <div className="h-[100vh]"></div>;
   }
   const totalPosts = data.blogData.length;
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {

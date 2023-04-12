@@ -1,4 +1,4 @@
 export default function Loading() {
   // You can add any UI inside Loading, including a Skeleton.
-  return <h1>Loading Now</h1>;
+  return <div className="h-[100vh]"></div>;
 }

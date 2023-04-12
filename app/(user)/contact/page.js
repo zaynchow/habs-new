@@ -23,7 +23,7 @@ const Contact = () => {
   }, []);
 
   if (!data) {
-    return <div>Loading...</div>;
+    return <div className="h-[100vh]"></div>;
   }
   return (
     <div className="">

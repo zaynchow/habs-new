@@ -30,7 +30,7 @@ const Footer = () => {
   }, []);
 
   if (!data) {
-    return <div>Loading...</div>;
+    return <div></div>;
   }
 
   return (
