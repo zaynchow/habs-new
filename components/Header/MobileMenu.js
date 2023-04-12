@@ -82,7 +82,7 @@ const MobileMenu = ({ data }) => {
               >
                 <div className={` flex justify-between `}>
                   <A
-                    className={"text-[25px]"}
+                    className={"text-[20px]"}
                     href={obj.url}
                     onClick={() => setShowNav(false)}
                   >
@@ -111,7 +111,7 @@ const MobileMenu = ({ data }) => {
                       <li key={idx}>
                         <A
                           href={`${obj.url}#${service.slug.current}`}
-                          className="cursor-pointer text-[20px]"
+                          className="cursor-pointer text-[16px]"
                           onClick={() => {
                             setShowNav(false);
                             setTimeout(() => {
