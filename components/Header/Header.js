@@ -37,7 +37,7 @@ const Header = () => {
   }
 
   return (
-    <header className="w-full md:max-w-[1250px] justify-between flex px-[24px] mx-auto mt-3 items-center">
+    <header className="w-full md:max-w-[1150px] justify-between flex px-[24px] mx-auto mt-3 items-center">
       <DesktopMenu data={data} />
       <MobileMenu data={data} />
     </header>

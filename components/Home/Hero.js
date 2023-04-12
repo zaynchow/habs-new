@@ -5,7 +5,7 @@ import { Subtitle } from "../Typography";
 
 
 
-const Hero = () => {
+const Hero = ({ data }) => {
   return (
     <div className=" py-[200px] mb-[50px] ml-6 mr-[11vw] md:m-0 mx-auto border-box">
       <div className=" md:absolute w-[45vw] md:h-full xl:top-[1vh] md:top-[6vh]  right-0 translate-x-[44%] hidden md:inline-block opacity-50 animate-fadeInHero">
@@ -239,7 +239,11 @@ const Hero = () => {
         Your trusted investment partner since 1956
       </Subtitle>
       <div className="md:text-center flex flex-col md:block ">
-        <Button link="/" bgColor="bg-black" className="mr-4 text-white">
+        <Button
+          link={data.join_us}
+          bgColor="bg-black"
+          className="mr-4 text-white"
+        >
           Join Us
         </Button>
         <Button

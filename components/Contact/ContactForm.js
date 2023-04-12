@@ -1,6 +1,6 @@
 import React from "react";
 import SectionContainer from "../Utils/SectionContainer";
-import { H3 } from "../Typography";
+import { H3, P } from "../Typography";
 import Button from "../Utils/Button";
 import { TextField } from "@mui/material";
 import { useState } from "react";
@@ -12,12 +12,33 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [accNum, setAccNum] = useState("");
   const [message, setMessage] = useState("");
+  const [messageState, setMessageState] = useState({
+    content: "",
+    success: "false",
+  });
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
 
     const formData = { fName, phNum, email, accNum, message };
-    fetch("api/hello", { method: "POST", body: JSON.stringify(formData) });
+
+    const res = await fetch("api/mail", {
+      method: "POST",
+      body: JSON.stringify(formData),
+    });
+
+    if (res.status == 200) {
+      setMessageState({
+        content: "Message was sent successfully!",
+        success: true,
+      });
+    } else {
+      setMessageState({
+        content:
+          "There was an error sending the message. Please try again later!",
+        success: false,
+      });
+    }
   };
 
   return (
@@ -80,7 +101,7 @@ const ContactForm = () => {
             onChange={(e) => setMessage(e.target.value)}
           />
         </div>
-        <div className="gap-4 flex mt-6">
+        <div className="gap-4 flex flex-col mt-6">
           <button
             type="submit"
             className={`md:pl-9 md:py-2.5 pl-6 py-2 
@@ -92,6 +113,9 @@ const ContactForm = () => {
             Submit
             <ArrowRightAltIcon className={`ml-2 text-[30px] text-white`} />
           </button>
+          <P className={`${messageState.success ? "text-green" : "text-red"}`}>
+            {messageState.content}
+          </P>
         </div>
       </form>
     </SectionContainer>

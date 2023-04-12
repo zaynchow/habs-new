@@ -14,6 +14,8 @@ module.exports = {
       yellow: "#ffe600",
       black: "#000000",
       blue: "#0C0F26",
+      green: "green",
+      red: "red",
     },
     screens: {
       // => @media (min-width: 640px) { ... }

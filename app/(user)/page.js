@@ -19,6 +19,7 @@ const logoQuery = groq`*[_type=="partners"] | order(_createdAt asc){image,slug}`
 const servicesQuery = groq`*[_type=="services"] | order(_createdAt asc){service_img, service_short_desc, service_name, slug} `;
 const valueAddedServicesQuery = groq`*[_type=="value_added_services"] | order(_createdAt asc){service_name, slug}`;
 const testimonialsQuery = groq`*[_type=="testimonials"]`;
+const customBtnsQuery = groq`*[_type=="custom_btns"]`;
 
 const HomePage = () => {
   const [data, setData] = useState(null);
@@ -28,6 +29,7 @@ const HomePage = () => {
     const logoData = await client.fetch(logoQuery);
     const servicesData = await client.fetch(servicesQuery);
     const valueAddedServicesData = await client.fetch(valueAddedServicesQuery);
+    const customBtnsData = await client.fetch(customBtnsQuery, "force-cache");
     const testimonialsData = await client.fetch(testimonialsQuery);
 
     const newData = {
@@ -36,6 +38,7 @@ const HomePage = () => {
       servicesData,
       testimonialsData,
       valueAddedServicesData,
+      customBtnsData,
     };
     setData(newData);
   }
@@ -62,7 +65,7 @@ const HomePage = () => {
           <Popup setPopupVisibility={setPopupVisibility} />
         </Dialog>
       )}
-      <Hero />
+      <Hero data={data.customBtnsData[0]} />
       <Counter data={data.counterData} />
       <LogoGrid data={data.logoData} />
       <CommissionBanner />
