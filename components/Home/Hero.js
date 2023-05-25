@@ -232,8 +232,8 @@ const Hero = ({ data }) => {
       </div>
 
       <Display1 className="text-left lg:text-center md:max-w-[600px] md:mx-auto">
-        Achieving financial
-        <span className="text-yellow"> success</span>
+        Achieving Financial
+        <span className="text-yellow"> Success</span>
       </Display1>
       <Subtitle className=" md:text-[20px] font-light md:mt-6 md:mb-9 my-6 tracking-[1.2px]  md:!text-center !text-left mx-0 md:mx-auto">
         Your trusted investment partner since 1956

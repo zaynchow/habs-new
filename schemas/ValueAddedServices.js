@@ -57,7 +57,8 @@ export default {
             },
             {
               name: "accordion_desc",
-              type: "text",
+              type: "array",
+              of: [{ type: "block" }, { type: "break" }],
               title: "Accordion Description",
               validation: (rule) => rule.required(),
             },

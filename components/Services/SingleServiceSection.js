@@ -42,7 +42,7 @@ const SingleServiceSection = ({
             content={desc}
             serializers={{
               ul: ({ children }) => (
-                <ul className="columns-2 mt-3">{children}</ul>
+                <ul className="columns-1 mt-3">{children}</ul>
               ),
               link: ({ href, children }) => (
                 <A href={href} className="text-yellow">
@@ -52,7 +52,7 @@ const SingleServiceSection = ({
               break: (props) => <br />,
               li: ({ children }) => (
                 <li className="before:content-['-'] leading-[28px]">
-                  {children}
+                  {` ${children}`}
                 </li>
               ),
             }}
@@ -74,7 +74,25 @@ const SingleServiceSection = ({
                 <P className="!m-0">{obj.accordion_title}</P>
               </AccordionSummary>
               <AccordionDetails>
-                <P>{obj.accordion_desc}</P>
+                <PortableText
+                  content={obj.accordion_desc}
+                  serializers={{
+                    ul: ({ children }) => (
+                      <ul className="columns-1 mt-3">{children}</ul>
+                    ),
+                    link: ({ href, children }) => (
+                      <A href={href} className="text-yellow">
+                        {children}
+                      </A>
+                    ),
+                    break: (props) => <br />,
+                    li: ({ children }) => (
+                      <li className="before:content-['-'] leading-[28px]">
+                        {` ${children}`}
+                      </li>
+                    ),
+                  }}
+                />
               </AccordionDetails>
             </Accordion>
           ))}

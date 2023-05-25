@@ -3,20 +3,14 @@ import SectionContainer from "../Utils/SectionContainer";
 import { P } from "../Typography";
 import InfoBox from "../Utils/InfoBox";
 
-const CompanyGoals = () => {
+const CompanyGoals = ({ data }) => {
   return (
     <SectionContainer className="flex md:flex-row flex-col justify-center gap-8">
       <InfoBox title="Mission">
-        <P>
-          Empowering investors to achieve greater returns through professional
-          brokerage services.
-        </P>
+        <P>{data.mission}</P>
       </InfoBox>
       <InfoBox title="Vision">
-        <P>
-          Our vision is to be the most innovative brokerage service in line with
-          our legacy of integrity and trust.
-        </P>
+        <P>{data.vision}</P>
       </InfoBox>
     </SectionContainer>
   );

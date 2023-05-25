@@ -28,7 +28,6 @@ export default function RootLayout({ children }) {
       className={`${jakarta.variable} ${lora.variable} font-sans`}
     >
       <body>
-        {/* TODO: Header image causing hydration error */}
         <Header />
         {children}
         <Footer />
