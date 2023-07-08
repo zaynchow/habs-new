@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/Header/Header";
 import "../globals.css";
 import Script from "next/script";
@@ -5,11 +7,12 @@ import { Plus_Jakarta_Sans, Lora } from "next/font/google";
 import Footer from "@/components/Footer";
 import FacebookPixel from "@/components/FacebookPixel/FacebookPixel";
 import * as fbq from "../../lib/fpixel";
-
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 // TODO: Remove 700 font weights from both of the fonts, don't need
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
   variable: "--font-jakarta",
 });
 const lora = Lora({
@@ -19,6 +22,11 @@ const lora = Lora({
 });
 
 export default function RootLayout({ children }) {
+  const pathName = usePathname();
+  useEffect(() => {
+    // This pageview only triggers the first time (it's important for Pixel to have real information)
+    fbq.pageview();
+  }, [pathName]);
   return (
     <html
       lang="en"
