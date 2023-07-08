@@ -1,5 +1,7 @@
 import Script from "next/script";
 
+import * as fbq from "../../lib/fpixel";
+
 const Head = () => {
   return (
     <>
