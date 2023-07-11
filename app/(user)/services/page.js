@@ -13,6 +13,7 @@ import ServicesGrid from "@/components/Services/ServicesGrid";
 const feesQuery = groq`*[_type=="fees"] | order(_createdAt asc)`;
 const servicesQuery = groq`*[_type=="services"] | order(_createdAt asc)`;
 
+
 const ServicesPage = () => {
   const [data, setData] = useState(null);
 

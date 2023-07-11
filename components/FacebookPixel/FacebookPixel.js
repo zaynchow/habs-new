@@ -9,7 +9,6 @@ const FacebookPixel = () => {
   useEffect(() => {
     fbq.pageview();
   }, [pathName]);
-
   return null;
 };
 

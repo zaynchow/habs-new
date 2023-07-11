@@ -29,7 +29,7 @@ const HomePage = () => {
     const logoData = await client.fetch(logoQuery);
     const servicesData = await client.fetch(servicesQuery);
     const valueAddedServicesData = await client.fetch(valueAddedServicesQuery);
-    const customBtnsData = await client.fetch(customBtnsQuery, "force-cache");
+    const customBtnsData = await client.fetch(customBtnsQuery);
     const testimonialsData = await client.fetch(testimonialsQuery);
 
     const newData = {
